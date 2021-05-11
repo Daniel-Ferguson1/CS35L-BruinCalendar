@@ -13,7 +13,7 @@ Place 'test' folder into './src/'
 
 From the web console(firebase setting), get one UID (copy).
 
-Go to './src/test/populateFirestore.js'.
+Go to './src/test/testData.js'.
 
 Replace all the values of the key, userId, with the copied UID (all of them).
 	So it's 'userId: HERE' for each dict (or i don't know how to call it.)
