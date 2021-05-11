@@ -44,7 +44,6 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 ```
 
 For the UID, you can either generate one user ID to test or anything from 'Authentication'
