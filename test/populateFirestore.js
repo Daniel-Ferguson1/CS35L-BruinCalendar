@@ -3,16 +3,17 @@ require('firebase/firestore');
 
 const { events,} = require('./testData')
 // === project setting provides config info (what's in the js tag)==
-  var firebaseConfig = {
-    apiKey: "AIzaSyAmUTvUmQ8amGkaO57mqQYcU7EaaxUGGsY",
-    authDomain: "tutorial-prj-18159.firebaseapp.com",
-    projectId: "tutorial-prj-18159",
-    storageBucket: "tutorial-prj-18159.appspot.com",
-    messagingSenderId: "680846972980",
-    appId: "1:680846972980:web:cdc08feb58cb0c96b29261",
-    measurementId: "G-X7WWFYBQR8"
-  };
-  firebase.initializeApp(firebaseConfig);
+var firebaseConfig = {
+  apiKey: "AIzaSyAQ4QXGiyUkAViFC5nUmalWLWp1tK2uwnc",
+  authDomain: "cs35l-6b371.firebaseapp.com",
+  projectId: "cs35l-6b371",
+  storageBucket: "cs35l-6b371.appspot.com",
+  messagingSenderId: "67689612289",
+  appId: "1:67689612289:web:49db3c0b25f7390138ec00",
+  measurementId: "G-84LH8Y502Z"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 // =================================================================
 
   const db = firebase.firestore();
