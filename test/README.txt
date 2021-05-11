@@ -1,3 +1,5 @@
+Objective: add set of data ('documents') to the project automatically.
+
 Before using, it's assumed:	
 	The firebase packages are installed ($ npm install firebase).
 	The firebase config is properly setup (./src/index.js).
