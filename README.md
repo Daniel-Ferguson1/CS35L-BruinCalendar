@@ -10,7 +10,17 @@ This file needs to have the following things (just copy and paste it):
   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=67689612289
   REACT_APP_FIREBASE_APP_ID=1:67689612289:web:49db3c0b25f7390138ec00
   REACT_APP_FIREBASE_MEASUREMENT_ID=G-84LH8Y502Z
+  
+# To use: 
+Replace your src with the one uploaded here.
 
+Install the following with "npm  i package" e.g. "npm i firebase"
+- firebase
+- react-bootstrap
+- react-dom
+- react-router-dom
+
+# Can ignore after this line (try to read if you need them tho lol)
 
 # Getting Started with Create React App
 
