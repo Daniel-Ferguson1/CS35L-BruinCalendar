@@ -1,3 +1,17 @@
+# Commment by Kyle
+MAKE SURE to have a file called [.env.local] in a directory that has src, public directories.
+This file needs to have the following things (just copy and paste it):
+
+  REACT_APP_FIREBASE_API_KEY=AIzaSyAQ4QXGiyUkAViFC5nUmalWLWp1tK2uwnc
+  REACT_APP_FIREBASE_AUTH_DOMAIN=cs35l-6b371.firebaseapp.com
+  REACT_APP_FIREBASE_DATABASE_URL=https://cs35l-6b371.firebaseio.com
+  REACT_APP_FIREBASE_PROJECT_ID=cs35l-6b371
+  REACT_APP_FIREBASE_STORAGE_BUCKET=cs35l-6b371.appspot.com
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID=67689612289
+  REACT_APP_FIREBASE_APP_ID=1:67689612289:web:49db3c0b25f7390138ec00
+  REACT_APP_FIREBASE_MEASUREMENT_ID=G-84LH8Y502Z
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
