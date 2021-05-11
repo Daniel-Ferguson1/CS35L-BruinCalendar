@@ -24,6 +24,9 @@ In terminal.
 Go to the console and check it the test data is popluated in the firestore
 (belong to the user).
 
+
+// ====== In the context of our current project ===================== 
+
 for the current project, the firebaseConfig shoud be:
 ```
 var firebaseConfig = {
@@ -39,3 +42,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 ```
+
+For the UID, you can either generate one user ID to test or anything from 'Authentication'
+in the webconsole. This test data will be generated in a way that the data belongs to the
+user. For example, in our proejct, userfoo@123.123 has UID, 'uwjGvRH7OPUrKb0uXgY53xZdGUK2'.
