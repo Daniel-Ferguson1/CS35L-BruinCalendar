@@ -4,6 +4,10 @@ Before using, it's assumed:
 		import firebase from 'firebase/app'
 		import 'firebase/analytics'
 		+ firebaseConfig stuff from the webconsole.
+	Your project has firestore( you can check in the webconsole,
+	if not, you can create.
+	The policy rule is set in a manner that allows the user to
+	write.
 	You have the access to write in the firestore(not local).
 With this assumption this should work for any react project file.
 No extra module required.
@@ -46,3 +50,22 @@ firebase.analytics();
 For the UID, you can either generate one user ID to test or anything from 'Authentication'
 in the webconsole. This test data will be generated in a way that the data belongs to the
 user. For example, in our proejct, userfoo@123.123 has UID, 'uwjGvRH7OPUrKb0uXgY53xZdGUK2'.
+
+
+To allow (if not set) the authenticated user to write on Firestore (by the script), the
+security rule ('Rules' in 'Firestore' in webconsole). The rule can be set:
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+    
+    match /user/{userId} {
+    	allow write: if request.auth.udi == userId;
+    }
+  }
+}
+```
