@@ -28,7 +28,7 @@ Install the following with "npm  i package" e.g. "npm i firebase"
 - make sure you have your .env.local file mentioned in the first part of this comment
 - make sure you have .json files with correct dependencies and "scripts" 
   (might need to create one again using "npm init" command, but not sure)
-- side note: to create a react app: "npm init react-app app-name-here" (this sets up kinda everything you need to use react if not you want to create each one in your own)
+- side note: to create a react app: "npm init react-app app-name-here" (this sets up kinda everything you need to use react including node_module if not you want to create each one in your own)
   https://youtu.be/3_SNWeg0Lsw
 # Can ignore below this line (try to read if you need them tho lol)
 
