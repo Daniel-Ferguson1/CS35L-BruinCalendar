@@ -3,9 +3,8 @@ Objective: add set of data ('documents') to the project automatically.
 Before using, it's assumed:	
 	The firebase packages are installed ($ npm install firebase).
 	The firebase config is properly setup (./src/index.js).
-		import firebase from 'firebase/app'
-		import 'firebase/analytics'
-		+ firebaseConfig stuff from the webconsole.
+		The plain 'index.js' setup is given in the other file
+		in the same repo(directory named 'plain_index_example').
 	Your project has firestore( you can check in the webconsole,
 	if not, you can create.
 	The policy rule is set in a manner that allows the user to
