@@ -1,5 +1,5 @@
 # Commment by Kyle
-MAKE SURE to have a file called [.env.local] in a directory that has src, public directories.
+MAKE SURE to have a file called [.env.local] in a directory that has src and public directories and .json files.
 This file needs to have the following things (just copy and paste it):
 
   REACT_APP_FIREBASE_API_KEY=AIzaSyAQ4QXGiyUkAViFC5nUmalWLWp1tK2uwnc
