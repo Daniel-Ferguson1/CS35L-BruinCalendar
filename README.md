@@ -20,6 +20,13 @@ Install the following with "npm  i package" e.g. "npm i firebase"
 - react-dom
 - react-router-dom
 
+# Common shitty errors
+- make sure you install npm and other dependencies mentioned above
+- make sure your node_module is in the same directory where you have src and public directories
+- make sure you have your .env.local file mentioned in the first part of this comment
+- make sure you have .json files with correct dependencies and "scripts" 
+  (might need to create one again using "npm init" command, but not sure)
+
 # Can ignore below this line (try to read if you need them tho lol)
 
 # Getting Started with Create React App
