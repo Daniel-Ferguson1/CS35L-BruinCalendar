@@ -20,7 +20,7 @@ Install the following with "npm  i package" e.g. "npm i firebase"
 - react-dom
 - react-router-dom
 
-# Can ignore after this line (try to read if you need them tho lol)
+# Can ignore below this line (try to read if you need them tho lol)
 
 # Getting Started with Create React App
 
