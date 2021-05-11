@@ -19,7 +19,7 @@ Install the following with "npm  i package" e.g. "npm i firebase"
 - react-bootstrap
 - react-dom
 - react-router-dom
-- you can check dependencies we are using form package.json file
+- you can check dependencies we are using from package.json file
 
 # Common shitty errors
 - make sure you have node.js installed
