@@ -15,6 +15,9 @@ This file needs to have the following things (just copy and paste it):
 Replace your src with the one uploaded here.
 
 Install the following with "npm  i package" e.g. "npm i firebase"
+- might be able to download whatever dependencies you need automatically by using 
+### `yarn && yarn`
+command, which I haven't tried
 - firebase
 - react-bootstrap
 - react-dom
