@@ -1,0 +1,25 @@
+Before using, it's assumed:	
+	The firebase packages are installed ($ npm install firebase).
+	The firebase config is properly setup (./src/index.js).
+		import firebase from 'firebase/app'
+		import 'firebase/analytics'
+		+ firebaseConfig stuff from the webconsole.
+	You have the access to write in the firestore(not local).
+With this assumption this should work for any react project file.
+No extra module required.
+
+Place 'test' folder into './src/'
+	So to make './src/test'
+
+From the web console(firebase setting), get one UID (copy).
+
+Go to './src/test/populateFirestore.js'.
+
+Replace all the values of the key, userId, with the copied UID (all of them).
+	So it's 'userId: HERE' for each dict (or i don't know how to call it.)
+
+In terminal.
+	$ node ./src/populateFirestore.js
+
+Go to the console and check it the test data is popluated in the firestore
+(belong to the user).
