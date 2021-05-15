@@ -1,6 +1,20 @@
-## when you write README.md
+## when you write anything and push 
 
 We are newbies. The nitty-grittiness required.
+If you just did something based on what you just learn by tutorial,
+you may assume no one here knows how to do it.
+If you leave that wihout any explaination it will only cause delay by:
+    1. Another person waste time for just a simple link or simple comment missing from your code.
+    2. Another person gives up to figure out what that is and do alternatively, concurrently (While you are doing the same job differently).
+If there is nothing we can see in the code, there should be something once to go 
+to the definition of the variable, function, or component.
+
+## style guide
+
+If your tutorial uses a weird style (ex. var name), it's good to hesitate to do
+like so. Prefer docs over tutorials in terms of style.
+
+
 
 ## enviroment
 
@@ -25,12 +39,16 @@ The App initialization takes place in src/firebase.js
 Most accurate way to search about packages
     https://www.npmjs.com/
 
-## what's particularly used
+## what's particularly used and decisions
 
-styled-components instead of bootstrap.
+'styled-components' instead of Bootstrap.
     This gives the front-end team to 'use' CSS (they need credit).
+    https://styled-components.com/docs/basics#motivation
+Convert css to styled-component
+    https://scotch.io/tutorials/converting-css-in-react-to-styled-component
 
-
+How I determined what to make.
+    https://reactnative.dev/docs/components-and-apis
 
 
 
