@@ -1,3 +1,24 @@
+## enviroment
+
+The file '.env.firebase' contains the fireabse api key and other variables for firebase. Don't set ignore for all project member but keep the repo private.
+
+The firebase variables are dealt like wise.
+    env file name: '.firebase'
+    https://amanhimself.dev/blog/firebase-config-in-a-react-app/
+    https://create-react-app.dev/docs/adding-custom-environment-variables/
+    
+        
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
