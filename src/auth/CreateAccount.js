@@ -35,6 +35,7 @@ export const CreateAccount = () => {
             setErrorMessage(emailCheckError);
             return;
         }
+        //TODO create that
     }
 
     return (
@@ -64,7 +65,7 @@ export const CreateAccount = () => {
                             <td>
                                 <StyledInput
                                     value={lastName}
-                                    placeholder='Doe'
+                                    placeholder='Dope'
                                     onChange={e => setLastName(e.target.value)} />
                             </td>
                         </tr>
@@ -73,7 +74,7 @@ export const CreateAccount = () => {
                             <td>
                                 <StyledInput
                                     value={emailAddress}
-                                    placeholder='john.doe@gmail.com'
+                                    placeholder='doejojojed@gmail.com'
                                     onChange={e => setEmailAddress(e.target.value)} />
                             </td>
                         </tr>

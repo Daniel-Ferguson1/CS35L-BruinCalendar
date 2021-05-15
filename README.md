@@ -14,14 +14,12 @@ to the definition of the variable, function, or component.
 If your tutorial uses a weird style (ex. var name), it's good to hesitate to do
 like so. Prefer docs over tutorials in terms of style.
 
-
-
 ## enviroment
 
-The file '.env.firebase' contains the fireabse api key and other variables for firebase. Don't set ignore for all project member but keep the repo private.
+The file '.env' contains the fireabse api key and other variables for firebase. Don't set ignore for all project member but keep the repo private.
 
 The firebase variables are dealt like wise.
-    env file name: '.firebase'
+    env file name: '.env'
     https://amanhimself.dev/blog/firebase-config-in-a-react-app/
     https://create-react-app.dev/docs/adding-custom-environment-variables/
 

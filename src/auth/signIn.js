@@ -8,6 +8,6 @@ export const signIn = async (email, password) => {
         const result = await firebase.auth().signInWithEmailAndPassword(email, password);
         return {};
     } catch (e) {
-        throw new Error('Error signing in');
+        throw new Error('Log-in Errorrrrr');
     }
 }

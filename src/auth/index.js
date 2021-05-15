@@ -5,3 +5,4 @@ export { LogOut } from './LogOut';
 export { LogInPage } from './LogInPage';
 export { useAuth } from './useAuth';
 export { CreateAccount } from './CreateAccount';
+export { EmailLanding } from './EmailLanding';

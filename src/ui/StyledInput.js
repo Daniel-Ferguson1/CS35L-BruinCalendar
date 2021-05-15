@@ -20,16 +20,3 @@ export const StyledInput = ({ ...rest }) => {
         <Input type='text' {...rest} />
     );
 }
-/*
-
-const StyledInput = styled.input`
-  border: 1px solid #000;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 5px;
-  width: 150px;
-  box-sizing: border-box;
-  background: ${prop => prop.correct ? 'white' : 'red'};
-`;
-
-*/
