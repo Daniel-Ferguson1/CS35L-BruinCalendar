@@ -10,21 +10,30 @@ The firebase variables are dealt like wise.
     env file name: '.firebase'
     https://amanhimself.dev/blog/firebase-config-in-a-react-app/
     https://create-react-app.dev/docs/adding-custom-environment-variables/
-    
-You could see in sometuorial that import.
-    import * as firebase from 'firebase';
-This is 2019ish. 2020ish update allows.
-    import firebase from 'firebase/app'; 
 
-The initialization takes place in src/firebase.js
+Some version issues from old reference projects
+    You could see in some tuorials that import.
+        import * as firebase from 'firebase';
+        This is 2019ish. 2020ish update allows.
+        import firebase from 'firebase/app';
+    'ServiceWorker' seems deprecated.
+        https://bit.ly/CRA-PWA
+
+The App initialization takes place in src/firebase.js
     firebase.initializeApp(firebaseConfig);
 
+Most accurate way to search about packages
+    https://www.npmjs.com/
 
 
 
 
 
 
+
+
+
+====================================================== Default README.md
 
 # Getting Started with Create React App
 
