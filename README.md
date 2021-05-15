@@ -25,9 +25,10 @@ The App initialization takes place in src/firebase.js
 Most accurate way to search about packages
     https://www.npmjs.com/
 
+## what's particularly used
 
-
-
+styled-components instead of bootstrap.
+    This gives the front-end team to 'use' CSS (they need credit).
 
 
 
