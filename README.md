@@ -1,3 +1,7 @@
+## when you write README.md
+
+We are newbies. The nitty-grittiness required.
+
 ## enviroment
 
 The file '.env.firebase' contains the fireabse api key and other variables for firebase. Don't set ignore for all project member but keep the repo private.
@@ -7,10 +11,13 @@ The firebase variables are dealt like wise.
     https://amanhimself.dev/blog/firebase-config-in-a-react-app/
     https://create-react-app.dev/docs/adding-custom-environment-variables/
     
-        
+You could see in sometuorial that import.
+    import * as firebase from 'firebase';
+This is 2019ish. 2020ish update allows.
+    import firebase from 'firebase/app'; 
 
-
-
+The initialization takes place in src/firebase.js
+    firebase.initializeApp(firebaseConfig);
 
 
 

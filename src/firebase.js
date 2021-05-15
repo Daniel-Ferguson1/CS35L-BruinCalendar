@@ -1,3 +1,5 @@
+import firebase from 'firebase/app';
+
 const firebaseConfig = {
     apiKey: process.env.DEV_API_KEY,
     authDomain: process.env.DEV_AUTH_DOMAIN,
@@ -8,3 +10,5 @@ const firebaseConfig = {
     appId: process.env.DEV_APP_ID,
     measurementId: process.env.DEV_MEASUREMENT_ID
   };
+
+firebase.initializeApp(firebaseConfig);
