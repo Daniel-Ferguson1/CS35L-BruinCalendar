@@ -10,6 +10,7 @@
 - ReactCalendar.js -> ReactCalendar.css (for styling)
 - Search.js -> Search.css (for styling)
 - index.js -> index.css (for styling)
+- searchFunctions.txt : to add more features to search bar
 
 # Package list
 - react-calendar
