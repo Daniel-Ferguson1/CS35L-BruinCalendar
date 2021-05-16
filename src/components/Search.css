@@ -1,0 +1,13 @@
+/* Search Bar */
+
+.container {
+  margin: "auto";
+  width: 100%;
+  maxWidth: "650px";
+  padding: "100px";
+}
+
+.constrained {
+  margin: "auto";
+  maxWidth: "400px";
+}
