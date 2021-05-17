@@ -1,5 +1,5 @@
    /* VARIABLES */
-  
+
    :root {
     --main-color: #1a8fff;
     --text-color: #777;
@@ -8,37 +8,39 @@
     --bg-color: #f9f9f9;
     --neutral-color: #fff;
   }
- 
- 
+
+
  /* GENERAL */
-  
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif; /* add 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', before sans-serif */
+  font-family: "Crimson Text", serif;
+  color: #2A2A2A;
   font-size: 1em;
   font-weight: 300;
   line-height: 1.5;
-  color: var(--text-color);
-  background: var(--bg-color);
   position: relative;
 }
 
 header {
   display: block;
   width: 100%;
-  padding: 1.75em 0;
-  border-bottom: 1 px solid var(--border-color);
-  background: var(--neutral-color);
+  padding: 6.5px;
+  border-bottom: 1 px;
+  background: #2D68C4;
 }
 
 header #logo {
-  font-size: 200%;
+  font-size: 60px;
   text-align: center;
-  color: var(--main-color);
-  line-height: 1;
+  color: white;
+  font-family: "Crimson Text", serif;
+  letter-spacing: 1px;
+  margin-right: 30%;
+  margin-left: 250px;
 }
 
 header #logo .icon {
@@ -47,9 +49,7 @@ header #logo .icon {
 
 main {
   display: block;
-  margin: auto;
-  margin-top: 2em;
-  max-width: 100em;
+  margin-top: 15px;
 }
 
 .container {
@@ -74,4 +74,3 @@ main {
 .larger{
   font-size: larger;
 }
-
