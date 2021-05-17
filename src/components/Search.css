@@ -1,13 +1,9 @@
 /* Search Bar */
 
-.container {
+.searchbar {
+  font-family: "Crimson Text", serif;
   margin: "auto";
-  width: 100%;
-  maxWidth: "650px";
+  width: 80%;
+  max-width: "650px";
   padding: "100px";
-}
-
-.constrained {
-  margin: "auto";
-  maxWidth: "400px";
 }
