@@ -1,107 +1,30 @@
-# Commment by Kyle
-MAKE SURE to have a file called [.env.local] in a directory that has src and public directories and .json files.
-This file needs to have the following things (just copy and paste it):
+# Frontend code
 
-  REACT_APP_FIREBASE_API_KEY=AIzaSyAQ4QXGiyUkAViFC5nUmalWLWp1tK2uwnc
-  REACT_APP_FIREBASE_AUTH_DOMAIN=cs35l-6b371.firebaseapp.com
-  REACT_APP_FIREBASE_DATABASE_URL=https://cs35l-6b371.firebaseio.com
-  REACT_APP_FIREBASE_PROJECT_ID=cs35l-6b371
-  REACT_APP_FIREBASE_STORAGE_BUCKET=cs35l-6b371.appspot.com
-  REACT_APP_FIREBASE_MESSAGING_SENDER_ID=67689612289
-  REACT_APP_FIREBASE_APP_ID=1:67689612289:web:49db3c0b25f7390138ec00
-  REACT_APP_FIREBASE_MEASUREMENT_ID=G-84LH8Y502Z
-  
-# To use: 
-Replace your src with the one uploaded here.
+# Package list to install (read notes.txt)
+- react-calendar
+- react-search-panel
+(if second package doesn't download, try to use
+--force option to install)
+- react-pro-sidebar
+- react-icons
 
-Install the following with "npm  i package" e.g. "npm i firebase"
-- might be able to download whatever dependencies you need automatically by using 
-### `yarn && yarn`
-command, which I haven't tried
-- firebase
-- react-bootstrap
-- react-dom
-- react-router-dom
-- you can check dependencies we are using from package.json file
+# File organization
+- ReactCalendar.js -> ReactCalendar.css (for styling)
+- Search.js -> Search.css (for styling)
+- index.js -> index.css (for styling)
+- searchFunctions.txt : to add more features to search bar
 
-# Common shitty errors
-- make sure you have node.js installed
-- make sure you install npm and other dependencies mentioned above
-- make sure your node_module is in the same directory where you have src and public directories
-- make sure you have your .env.local file mentioned in the first part of this comment
-- make sure you have .json files with correct dependencies and "scripts" 
-  (might need to create one again using "npm init" command, but not sure)
-- side note: to create a react app: "npm init react-app app-name-here" (this sets up kinda everything you need to use react including node_module if not you want to create each one in your own)
-  https://youtu.be/3_SNWeg0Lsw
-# Can ignore below this line (try to read if you need them tho lol)
+# Package list
+- react-calendar
+    https://www.npmjs.com/package/react-calendar 
+- react-search-bar
+    https://www.npmjs.com/package/react-search-panel
+- react-pro-sidebar
+    https://www.npmjs.com/package/react-pro-sidebar
+- react-icons
 
-# Getting Started with Create React App
+# Bruin Logo is from
+https://www.sportslogos.net/logos/view/88242910/UCLA_Bruins/0/Alternate_Logo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# UCLA Logo is from
+https://en.wikipedia.org/wiki/UCLA_Bruins
