@@ -11,15 +11,12 @@ class App extends React.Component {
         return (
             <div className ="App">
                 <Sidebar />
-                <header>
+                <header link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
                     <div id="logo">
-                        <span>
-                            <img className="b_logo" src={bruin_logo} alt="this is Bruin logo" />
-                            <b className="larger">-Cal</b>
-                        </span>
+                        <strong>Bruin Calendar</strong>
                     </div>
                 </header>
-                <main className="container">
+                <main className="container" link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
                   <ReactCalendar />
                   <Search />
                 </main>
