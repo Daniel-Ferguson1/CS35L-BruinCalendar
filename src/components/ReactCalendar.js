@@ -8,7 +8,7 @@ const ReactCalendar = () => {
 
   return (
     <div>
-      <Calendar onChange={onChange} value={date} />
+      <Calendar onChange={onChange} value={date} calendarType={"US"} />
     </div>
   );
 };
