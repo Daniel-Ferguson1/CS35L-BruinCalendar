@@ -12,9 +12,8 @@ const Search = () => {
   const [selectedChoices, setSelectedChoices] = useState(choices);
 
   return (
-    <div className="container"> 
-      <div className="constrained">
-        <SearchPanel
+    <div className="searchbar"> 
+        <SearchPanel id="panel"
           choices={choices}
           onChange={event => setInput(event.target.value)}
           onSelectionChange={setSelectedChoices}
@@ -22,7 +21,6 @@ const Search = () => {
           selectedChoices={selectedChoices}
           value={input}
         />
-      </div>
     </div>
   );
 }
