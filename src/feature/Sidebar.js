@@ -35,14 +35,14 @@ const Sidebar = () => {
         <ProSidebar collapsed={menuCollapse}>
           <SidebarHeader>
             <img className="ucla_logo" src={UCLA_logo} />
-            <div className="closemenu" onClick={menuIconClick}>
-                {/* changing menu collapse icon on click */}
+            <span className="closemenu" onClick={menuIconClick}>
+                {/* changing menu collapse icon on click */}             
               {menuCollapse ? (
                 <FiArrowRightCircle/>
               ) : (
                 <FiArrowLeftCircle/>
               )}
-            </div>
+            </span>
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
