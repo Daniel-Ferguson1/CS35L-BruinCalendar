@@ -5,6 +5,8 @@
 - react-search-panel
 (if second package doesn't download, try to use
 --force option to install)
+- react-pro-sidebar
+- react-icons
 
 # File organization
 - ReactCalendar.js -> ReactCalendar.css (for styling)
@@ -17,6 +19,12 @@
     https://www.npmjs.com/package/react-calendar 
 - react-search-bar
     https://www.npmjs.com/package/react-search-panel
+- react-pro-sidebar
+    https://www.npmjs.com/package/react-pro-sidebar
+- react-icons
 
 # Bruin Logo is from
 https://www.sportslogos.net/logos/view/88242910/UCLA_Bruins/0/Alternate_Logo
+
+# UCLA Logo is from
+https://en.wikipedia.org/wiki/UCLA_Bruins
