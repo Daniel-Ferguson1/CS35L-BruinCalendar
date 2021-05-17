@@ -10,15 +10,16 @@
 }
 
 #header .closemenu {
-  color: #000;
+  color: #2D68C4;
   position: absolute;
-  right: 0;
+  right: 5px;
   z-index: 9999;
+  margin-top: 15px;
   line-height: 20px;
   border-radius: 50%;
   font-weight: bold;
   font-size: 22px;
-  top: 55px;
+  top: 25px;
   cursor: pointer;
 }
 
@@ -28,8 +29,8 @@
 }
 
 #header .pro-sidebar.collapsed {
-  width: 80px;
-  min-width: 80px;
+  width: 140px;
+  min-width: 140px;
 }
 
 #header .pro-sidebar-inner {
@@ -49,32 +50,24 @@
 }
 
 #header .pro-sidebar-inner .pro-sidebar-layout ul {
-  padding: 0 5px;
+  padding: 0 6px;
 }
 
 #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
-  color: #000;
+  color: #2A2A2A;
   margin: 10px 0px;
   font-weight: bold;
 }
 
 #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
   background-color: #cdecfb57;
-  color: #000;
-  border-radius: 3px;
-}
-
-#header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper .pro-item-content {
-  color: #000;
+  border-radius: 5px;
+  margin-left: 28px;
 }
 
 #header .pro-sidebar-inner .pro-sidebar-layout .active {
   background-image: linear-gradient(0deg, #008cfe 0%, #008cfe5d 100%);
 }
-
-/* #header .b_logo {
-  margin: center;
-} */
 
 @media only screen and (max-width: 720px) {
   html {
@@ -83,7 +76,11 @@
 }
 
 .ucla_logo {
-    margin: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 28px;
+    margin-bottom: 34px;
     height: 40px;
     width: 80px;
 }
