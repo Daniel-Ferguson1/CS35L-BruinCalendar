@@ -32,6 +32,7 @@ function Users() {
 	  		<ul>
 	  			{users.map(user => (
 	  				<li>{user.email}</li>
+                    
 	  			))}
 	  		</ul>
 	  	</>

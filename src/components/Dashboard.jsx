@@ -28,7 +28,8 @@ function Dashboard() {
 	useEffect(() => {
 		const fetchEvents = async () => {
 			const db = firebase.firestore()
-			const data = await db.collection("events").get()
+			const data = await db.collection("events").where('description', 'array-contains-any',
+			['this', 'Bar']).get()
 			setEvents(data.docs.map(doc => doc.data()))
 		}
 		fetchEvents()
@@ -44,6 +45,9 @@ function Dashboard() {
 	  				<li>{event.eventName}</li>
 	  			))}
 	  		</ul>
+			<div>
+	  			<Link to="/addEvent">Add Event</Link>
+	  		</div>
 			<Users/>
 	  		<div>
 	  			<Link to="/update-profile">Update Profile</Link>
