@@ -2,6 +2,7 @@ import React, {useRef, useState, useEffect} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
+import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 
@@ -43,6 +44,7 @@ function Dashboard() {
 	  				<li>{event.eventName}</li>
 	  			))}
 	  		</ul>
+			<Users/>
 	  		<div>
 	  			<Link to="/update-profile">Update Profile</Link>
 	  		</div>

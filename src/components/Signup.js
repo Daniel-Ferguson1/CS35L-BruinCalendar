@@ -2,6 +2,8 @@ import React, {useRef, useState} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
+import firebase from 'firebase/app'
+import 'firebase/firestore';
 
 export default function Signup() {
 	const emailRef = useRef();
@@ -21,6 +23,14 @@ export default function Signup() {
 			setError("");
 			setLoading(true);
 			await signup(emailRef.current.value, passwordRef.current.value);
+			const db = firebase.firestore()
+			const data = {
+				email: emailRef.current.value,
+				userName: '',
+				school: '',
+				friends: []
+			  };
+			const res = await db.collection('users').doc().set(data);
 			//console.log('hey')
 			history.push("/")
 		}
