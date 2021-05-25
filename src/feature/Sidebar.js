@@ -50,9 +50,7 @@ const Sidebar = () => {
                 Home
               </MenuItem>
               <MenuItem icon={<FaList />}>Friend List</MenuItem>
-              <MenuItem icon={<FaRegHeart />}>Favorite</MenuItem>
               <MenuItem icon={<RiPencilLine />}>Profile</MenuItem>
-              <MenuItem icon={<BiCog />}>Settings</MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter>
