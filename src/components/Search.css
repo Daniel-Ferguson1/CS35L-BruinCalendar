@@ -1,0 +1,9 @@
+/* Search Bar */
+
+.searchbar {
+  font-family: "Crimson Text", serif;
+  margin: "auto";
+  width: 80%;
+  max-width: "650px";
+  padding: "100px";
+}
