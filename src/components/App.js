@@ -6,6 +6,7 @@ import PrivateRoutes from "./PrivateRoutes"
 import {AuthProvider} from '../contexts/AuthContext'
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 import AddEvent from './AddEvent';
+import homePage from './homePage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
 	  		<Router>
 	  			<AuthProvider>
 	  				<Switch>
-	  					<PrivateRoutes exact path='/' component={Dashboard}/>
+	  					<PrivateRoutes exact path='/' component={homePage}/>
 	  					<Route path='/signup' component={Signup}/>
 	  					<Route path='/login' component={Login}/>
 						<Route path='/addEvent' component={AddEvent}/>

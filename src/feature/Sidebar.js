@@ -34,7 +34,7 @@ const choices = [
   */
 
 const Sidebar = () => {
-    
+    const history = useHistory()
     const currentUser = useAuth()
     //console.log('HELLOHELLOHELLO')
     //console.log(currentUser) // = undefined
@@ -245,13 +245,7 @@ const Sidebar = () => {
               <MenuItem active={true} icon={<FiHome />}>
                 Home
               </MenuItem>
-              {/*
-              <MenuItem icon={<FaList />}>Friend List</MenuItem>
-              */}
-              <SubMenu title="Friends" icon={<FaUserFriends />}>
-                <MenuItem>Friend 1</MenuItem>
-                <MenuItem>Friend 2</MenuItem>
-              </SubMenu>
+              <MenuItem onClick={() => {history.push("/addEvent")}} icon={<FaList />}>Friend List</MenuItem>
               <MenuItem icon={<RiPencilLine />}>Profile</MenuItem>
             </Menu>
           </SidebarContent>
