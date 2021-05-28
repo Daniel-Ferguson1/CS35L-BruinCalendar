@@ -19,6 +19,7 @@ function App() {
 	  					<Route path='/signup' component={Signup}/>
 	  					<Route path='/login' component={Login}/>
 						<Route path='/addEvent' component={AddEvent}/>
+						<Route path='/Dashboard' component={Dashboard}/>
 	  				</Switch>
 	  			</AuthProvider>
 	  		</Router>

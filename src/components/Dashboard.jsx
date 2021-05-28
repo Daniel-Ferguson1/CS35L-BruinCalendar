@@ -29,7 +29,7 @@ function Dashboard() {
 		const fetchEvents = async () => {
 			const db = firebase.firestore()
 			const data = await db.collection("events").where('description', 'array-contains-any',
-			['this', 'Bar']).get()
+			['this', 'Bar']).get() //instead of ['this', 'Bar'], 
 			setEvents(data.docs.map(doc => doc.data()))
 		}
 		fetchEvents()

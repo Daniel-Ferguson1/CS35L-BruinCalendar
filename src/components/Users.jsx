@@ -14,12 +14,32 @@ function Users() {
 
 	useEffect(() => {
 		const fetchUsers = async () => {
+
 			const db = firebase.firestore()
-			const data = await db.collection("users").get()
-			setUsers(data.docs.map(doc => doc.data()))
+			if (listType == 'Friends')
+			{
+				const data = await db.collection("users").where('email', '==', currentUser.email)
+				.get()
+				.then((queryDocumentSnapshot) => {
+					queryDocumentSnapshot.forEach((doc) => {
+						setUsers(doc.get('friends'));
+					})
+				})
+			}
+			else
+			{
+				const data = await db.collection("users").get()
+				setUsers(data.docs.map(doc => doc.data()))
+			}
 		}
 		fetchUsers()
 	}, [listType])
+
+	/*
+	.catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+	*/
 
     return (
 	  	<>
@@ -28,13 +48,15 @@ function Users() {
 	  			<Button onClick={() => setListType('All')}>All Users</Button>
                 <Button onClick={() => setListType('Friends')}>My Friends</Button>
 	  		</div>
-	  		<strong>{listType}: </strong> 
-	  		<ul>
-	  			{users.map(user => (
-	  				<li>{user.email}</li>
-                    
-	  			))}
-	  		</ul>
+			<div> 
+	  			<strong>{listType}: </strong> 
+	  			<ul>
+	  				{users.map(user => (
+	  					<li>{user.email}</li>
+	  				))}
+	  			</ul>
+			</div>
+
 	  	</>
   	);
 }
