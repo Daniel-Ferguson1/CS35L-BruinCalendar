@@ -8,9 +8,9 @@ import 'firebase/firestore';
 
 function FriendList() {
 	const [error, setError] = useState('') 
-	const [events, setEvents] = useState([]) 
+	const [friends, setFriends] = useState([]) 
 	const history = useHistory()
-    const [listType, setListType] = useState('All')
+    const [listType, setListType] = useState('Friends')
     const [active, setActive] = useState(false)
 	const [users, setUsers] = useState([]) 
 	const { currentUser } = useAuth()
@@ -18,10 +18,8 @@ function FriendList() {
     //const admin = require('firebase-admin');
 
 	async function addFriend(e,item){
-        
-        console.log(item.email);
         //const theUser = await db.collection("users").where('email', '==', currentUser.email).get()
-        const theUser = db.collection('users').doc(item.email);
+        const theUser = db.collection('users').doc(currentUser.email);
 
         const unionRes = await theUser.update({
             friends: firebase.firestore.FieldValue.arrayUnion(item.email)
@@ -33,13 +31,11 @@ function FriendList() {
 
 			if (listType == 'Friends')
 			{
-				const data = await db.collection("users").where('email', '==', currentUser.email)
-				.get()
-				.then((queryDocumentSnapshot) => {
-					queryDocumentSnapshot.forEach((doc) => {
-						setUsers(doc.get('friends'));
-					})
-				})
+				const data = await db.collection("users").doc(currentUser.email).get()
+                var theFriends = data.get("friends");
+                setUsers(theFriends);
+                setFriends(theFriends);
+
 			}
 			else
 			{
@@ -50,20 +46,30 @@ function FriendList() {
 		fetchUsers()
 	}, [listType])
 
-    let button;
     let message = ''
+    let listLine; 
     if (listType == 'Friends') {
-        message = 'View Profile'
-        button = <Button >View Profile</Button>;
+
+        listLine = friends.map(user => {
+              return <li>{user} <Button onClick={e => addFriend(e,user)}>View Profile</Button> </li>
+          })
     } 
     else {
-        message = 'Add Friend'
-        button = <Button onClick={addFriend}>Add Friend</Button>;
+        listLine = users.map(user => {
+            if(user.email == currentUser.email){
+                return
+            }
+            if(friends.includes(user.email)){
+                return
+            }
+              return <li>{user.email} <Button onClick={e => addFriend(e,user)}>Add Friend</Button> </li>
+          })
     }
 
     return (
 	  	<>
-	  		<h2>Users</h2>
+	  		<h2>Friends</h2>
+            <strong>Email: </strong> {currentUser.email}
 	  		<div>
 	  			<Button onClick={() => setListType('All')}>All Users</Button>
                 <Button onClick={() => setListType('Friends')}>My Friends</Button>
@@ -71,12 +77,7 @@ function FriendList() {
 			<div> 
 	  			<strong>{listType}: </strong> 
 	  			<ul>
-	  				{users.map(user => {
-                        //if(!active){
-                            //message = 'Friend Request Sent'
-                        //}
-	  					return <li>{user.email} <Button onClick={e => addFriend(e,user)}>{message}</Button> </li>
-                      })}
+                    {listLine}
 	  			</ul>
 			</div>
 	  	</>
