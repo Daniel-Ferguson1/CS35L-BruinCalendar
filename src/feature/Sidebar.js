@@ -69,7 +69,7 @@ const Sidebar = () => {
               <MenuItem active={true} icon={<FiHome />}>
                 Home
               </MenuItem>
-              <MenuItem onClick={() => {history.push("/addEvent")}} icon={<FaList />}>Friend List</MenuItem>
+              <MenuItem onClick={() => {history.push("/FriendList")}} icon={<FaList />}>Friend List</MenuItem>
               {/*<MenuItem icon={<RiPencilLine />}>Profile</MenuItem>*/}
               <MenuItem onClick={() => {history.push("/Dashboard")}} icon={<FaList />}>Profile</MenuItem>
             </Menu>

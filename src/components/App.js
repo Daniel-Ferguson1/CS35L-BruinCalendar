@@ -7,6 +7,7 @@ import {AuthProvider} from '../contexts/AuthContext'
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 import AddEvent from './AddEvent';
 import homePage from './homePage';
+import FriendList from './FriendList'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 	  					<Route path='/login' component={Login}/>
 						<Route path='/addEvent' component={AddEvent}/>
 						<Route path='/Dashboard' component={Dashboard}/>
+						<Route path='/FriendList' component={FriendList}/>
 	  				</Switch>
 	  			</AuthProvider>
 	  		</Router>

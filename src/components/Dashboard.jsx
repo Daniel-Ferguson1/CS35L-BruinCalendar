@@ -13,6 +13,7 @@ function Dashboard() {
 	const history = useHistory()
 
 	async function handleLogout(){
+		console.log('heyyh')
 		setError("");
 		try{
 			await logout();
@@ -24,6 +25,12 @@ function Dashboard() {
 			setError("Failed to log out");
 		}
 	}
+
+	async function addFriend(){
+        //condition checking to change state from true to false and vice versa
+        console.log('hey')
+        //console.log(item.email)
+    }
 
 	useEffect(() => {
 		const fetchEvents = async () => {
