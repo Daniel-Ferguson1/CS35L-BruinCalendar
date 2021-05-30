@@ -41,7 +41,7 @@ export default function AddEvent() {
 
 			const data = {
 				dateTime: date.concat(' ').concat(time),
-				userId: currentUser.uid,
+				userId: currentUser.email,
 				eventName: name,
                 description: desc,
 				searchValues: searchArray
