@@ -5,6 +5,7 @@ import './Search.css'
 import SearchField from "react-search-field";
 import firebase from 'firebase/app'
 import 'firebase/firestore';
+import AddComment from './AddComment'
 
  
 
@@ -44,9 +45,17 @@ import 'firebase/firestore';
         classNames="test-class"
         />
          <div> 
-            <ul>
+            <ul className="searchlist">
 	  			{events.map(event => (
-	  			    <li>{event.eventName} : {event.description}</li>
+	  			    <li> 
+                {event.eventName} : {event.description}
+                <ul>
+                  <li>
+                    {event.commentList}
+                  </li>
+                </ul>
+                <AddComment  />
+              </li>
 	  		    ))}
 	  		</ul>
         </div>

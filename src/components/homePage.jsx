@@ -4,6 +4,7 @@ import ReactCalendar from "./ReactCalendar";
 import Search from "./Search";
 import Eventlist from './Eventlist'
 import Sidebar from '../feature/Sidebar';
+import Header from './Header';
 import "../index.css";
 import 'react-bootstrap'
 //import Users from './Users'
@@ -14,11 +15,7 @@ function homePage() {
     <div>
       <div className ="App">
           <Sidebar />
-          <header link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
-              <div id="logo">
-                  <strong>Bruin Calendar</strong>
-              </div>
-          </header>
+          <Header />
           <main className="container" link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
             <ReactCalendar />
             <Search />

@@ -66,7 +66,7 @@ const Sidebar = () => {
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
-              <MenuItem active={true} icon={<FiHome />}>
+              <MenuItem onClick={() => {history.push("/")}} active={true} icon={<FiHome />}>
                 Home
               </MenuItem>
               <MenuItem onClick={() => {history.push("/FriendList")}} icon={<FaList />}>Friend List</MenuItem>

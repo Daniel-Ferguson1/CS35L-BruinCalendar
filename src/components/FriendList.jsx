@@ -5,7 +5,9 @@ import {Link, useHistory} from 'react-router-dom'
 import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
-import FriendProfile from './FriendProfile';
+import Sidebar from '../feature/Sidebar';
+import Header from './Header';
+import './FriendList.css'
 
 function FriendList() {
 	const [error, setError] = useState('') 
@@ -50,16 +52,15 @@ function FriendList() {
     let message = ''
     let listLine; 
     if (listType == 'Friends') {
-
         listLine = friends.map(user => {
-              return <li>{user} 
-              <Link to={{
-                pathname: "/friendProfile",
-                uid: user // your data array of objects
-                }}>
-                <Button>View Profile</Button>
-              </Link> </li>
-          })
+            return <li>{user} 
+            <Link to={{
+              pathname: "/friendProfile",
+              uid: user // your data array of objects
+              }}>
+              <Button>View Profile</Button>
+            </Link> </li>
+        })  
     } 
     else {
         listLine = users.map(user => {
@@ -73,11 +74,13 @@ function FriendList() {
           })
     }
 
-    //let chg = FriendProfile('hdshj');
-    let chg2 = <h2>Friendsdfss</h2>;
-
     return (
 	  	<>
+        <div>
+            <Sidebar />
+            <Header />
+		</div>
+        <div className="FriendList">
 	  		<h2>Friends</h2>
             <strong>Email: </strong> {currentUser.email}
 	  		<div>
@@ -88,8 +91,9 @@ function FriendList() {
 	  			<strong>{listType}: </strong> 
 	  			<ul>
                     {listLine}
-	  			</ul>   
+	  			</ul>
 			</div>
+        </div>
 	  	</>
   	);
 }

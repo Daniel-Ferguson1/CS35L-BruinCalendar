@@ -3,6 +3,10 @@ import { Form, Button, Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
 import firebase from 'firebase/app'
+import Sidebar from '../feature/Sidebar';
+import Header from './Header';
+import './AddEvent.css'
+
 import 'firebase/firestore';
 
 export default function AddEvent() {
@@ -10,6 +14,7 @@ export default function AddEvent() {
 	const timeRef = useRef();
 	const nameRef = useRef();
     const descriptionRef = useRef();
+	const commentRef = useRef();
 	const {currentUser} = useAuth()
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
@@ -33,6 +38,7 @@ export default function AddEvent() {
             let time = timeRef.current.value
             let name = nameRef.current.value
             let desc = descriptionRef.current.value
+			let comment = commentRef.current.value
             let nameArray = name.split(' ')
             let descArray = desc.split(' ')
             let searchArray = nameArray.concat(descArray)
@@ -41,10 +47,12 @@ export default function AddEvent() {
 
 			const data = {
 				dateTime: date.concat(' ').concat(time),
-				userId: currentUser.email,
+				userId: currentUser.uid,
 				eventName: name,
                 description: desc,
-				searchValues: searchArray
+				commentList: comment,
+				searchValues: searchArray,
+
 			  };
 			const res = await db.collection('events').doc().set(data);
 			history.push("/")
@@ -58,34 +66,46 @@ export default function AddEvent() {
 
 	return ( 
 		<>
-	  <div>
+	  	<div>
+          <Sidebar />
+          <Header />
+		</div>
+
+		<div className="addEvent">
 		 <h2>Create Event</h2>
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleSubmit}>
 		  <Form.Group id="date">
-		  	<Form.Label>Date</Form.Label>
+		  	<Form.Label>Date: </Form.Label>
 		  	<Form.Control type="date" ref={dateRef} required />
 		  </Form.Group>
 
           <Form.Group id="time">
-		  	<Form.Label>Time</Form.Label>
+		  	<Form.Label>Time: </Form.Label>
 		  	<Form.Control type="time" ref={timeRef} required />
 		  </Form.Group>
 
 		  <Form.Group id="name">
-		  		<Form.Label>Event Name</Form.Label>
+		  		<Form.Label>Event Name: </Form.Label>
 		  		<Form.Control ref={nameRef} required />
 		  </Form.Group>
 
 		    <Form.Group id="description">
-		  		<Form.Label>Event Description</Form.Label>
+		  		<Form.Label>Event Description: </Form.Label>
 		  		<Form.Control ref={descriptionRef} />
 		  	</Form.Group>
-		  	<Button disabled={loading} type="submit">Add Event</Button>
+
+			  <Form.Group id="comment">
+		  		<Form.Label>Comments: </Form.Label>
+		  		<Form.Control ref={commentRef} required />
+		  </Form.Group>
+
+		  	<Button disabled={loading} type="submit">Add Event: </Button>
 		</Form>
 	  </div> 
-	  <div>
-	  	Already have an account? <Link to="/">Cancel </Link>
+	  
+	  <div className="addEvent">
+	  	No longer need to schedule an event? <Link to="/">Cancel </Link>
 	  </div>
 	  </>
 

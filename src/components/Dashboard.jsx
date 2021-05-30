@@ -5,6 +5,9 @@ import {Link, useHistory} from 'react-router-dom'
 import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
+import Sidebar from '../feature/Sidebar';
+import Header from './Header';
+import './Header.css'
 
 function Dashboard() {
 	const [error, setError] = useState('') 
@@ -41,9 +44,14 @@ function Dashboard() {
 		}
 		fetchEvents()
 	}, [])
-
     return (
 	  	<>
+		<div>
+          <Sidebar />
+          <Header />
+		</div>
+
+		<div className="Header">
 	  		<h2>Profile</h2>
 	  		{error && <Alert variant="danger">{error}</Alert>}
 	  		<strong>Email: </strong> {currentUser.email}
@@ -62,6 +70,7 @@ function Dashboard() {
 	  		<div>
 	  			<Button variant="link" onClick={handleLogout}>Log Out</Button>
 	  		</div>
+		</div>
 	  	</>
   	);
 }
