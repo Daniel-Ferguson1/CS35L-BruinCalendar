@@ -8,6 +8,7 @@ import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 import AddEvent from './AddEvent';
 import homePage from './homePage';
 import FriendList from './FriendList'
+import FriendProfile from './FriendProfile';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 						<Route path='/addEvent' component={AddEvent}/>
 						<Route path='/Dashboard' component={Dashboard}/>
 						<Route path='/FriendList' component={FriendList}/>
+						<Route path='/friendProfile' component={FriendProfile}/>
 	  				</Switch>
 	  			</AuthProvider>
 	  		</Router>
