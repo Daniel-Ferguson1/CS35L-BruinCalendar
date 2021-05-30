@@ -5,6 +5,7 @@ import './Search.css'
 import SearchField from "react-search-field";
 import firebase from 'firebase/app'
 import 'firebase/firestore';
+import AddComment from './AddComment'
 
  
 
@@ -32,11 +33,6 @@ import 'firebase/firestore';
 
     fetchEvents()
     }, [input])
-    
-    function addComment(e) {
-      e.preventDefault();
-      console.log('You clicked submit.');
-    }
 
    return (
     <>
@@ -49,13 +45,16 @@ import 'firebase/firestore';
         classNames="test-class"
         />
          <div> 
-            <ul>
+            <ul className="searchlist">
 	  			{events.map(event => (
 	  			    <li> 
-                {event.eventName} : {event.description} <br></br>
-                <form onSubmit={addComment}>
-                <button type="submit">Add Comment</button>
-                </form>
+                {event.eventName} : {event.description}
+                <ul>
+                  <li>
+                    {event.commentList}
+                  </li>
+                </ul>
+                <AddComment  />
               </li>
 	  		    ))}
 	  		</ul>
