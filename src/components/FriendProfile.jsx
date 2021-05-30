@@ -6,19 +6,42 @@ import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 
+
+
 class FriendProfile extends React.Component {
     constructor() {
       super()
+      const events = [];
+      this.state = {
+        events
+      }
     }
+
+  async getEvents(uid) {
+    let db = firebase.firestore();
+    let data = await db.collection('events').where('userId', '==', 'uwjGvRH7OPUrKb0uXgY53xZdGUK2').get()
+    this.setState({
+      events: (data.docs.map(doc => doc.data()))
+    });
+  }
     
-    render(){
+  render(){
         const { uid } = this.props.location
+        this.getEvents('wofnw');
       return (
         <>
             <h2><strong>Email: </strong> {uid}</h2>
+            <div>
+              <ul>
+               {this.state.events.map((event) =>
+                {
+                  return <li>{event.eventName}</li>
+                })}
+              </ul>
+            </div>
         </>
       )
-    }
   }
+}
 
 export default FriendProfile;
