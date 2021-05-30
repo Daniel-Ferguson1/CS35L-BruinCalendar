@@ -19,7 +19,7 @@ class FriendProfile extends React.Component {
 
   async getEvents(uid) {
     let db = firebase.firestore();
-    let data = await db.collection('events').where('userId', '==', 'uwjGvRH7OPUrKb0uXgY53xZdGUK2').get()
+    let data = await db.collection('events').where('userId', '==', uid).get()
     this.setState({
       events: (data.docs.map(doc => doc.data()))
     });
@@ -27,7 +27,7 @@ class FriendProfile extends React.Component {
     
   render(){
         const { uid } = this.props.location
-        this.getEvents('wofnw');
+        this.getEvents(uid);
       return (
         <>
             <h2><strong>Email: </strong> {uid}</h2>
