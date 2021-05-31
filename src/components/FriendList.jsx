@@ -56,7 +56,7 @@ function FriendList() {
             return <li>{user} 
             <Link to={{
               pathname: "/friendProfile",
-              uid: user // your data array of objects
+              stateData: {user,currentUser} // your data array of objects
               }}>
               <Button>View Profile</Button>
             </Link> </li>

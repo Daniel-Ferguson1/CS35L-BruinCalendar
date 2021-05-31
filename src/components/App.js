@@ -9,6 +9,7 @@ import AddEvent from './AddEvent';
 import homePage from './homePage';
 import FriendList from './FriendList'
 import FriendProfile from './FriendProfile';
+import AddFriendEvent from './AddFriendEvent';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 						<Route path='/Dashboard' component={Dashboard}/>
 						<Route path='/FriendList' component={FriendList}/>
 						<Route path='/friendProfile' component={FriendProfile}/>
+						<Route path='/bookTime' component={AddFriendEvent}/>
 	  				</Switch>
 	  			</AuthProvider>
 	  		</Router>

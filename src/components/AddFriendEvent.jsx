@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
+import {Link, useHistory,useLocation} from 'react-router-dom'
 import firebase from 'firebase/app'
 import Sidebar from '../feature/Sidebar';
 import Header from './Header';
@@ -9,16 +9,16 @@ import './AddEvent.css'
 
 import 'firebase/firestore';
 
-export default function AddEvent() {
+export default function AddFriendEvent() {
 	const dateRef = useRef();
 	const timeRef = useRef();
 	const nameRef = useRef();
     const descriptionRef = useRef();
-	const commentRef = useRef();
 	const {currentUser} = useAuth()
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
 	const history = useHistory()
+	const { friendId } = useLocation();
 
     //dateTime "2022-04-10 13:00"
     //description "This is such and such."
@@ -38,7 +38,6 @@ export default function AddEvent() {
             let time = timeRef.current.value
             let name = nameRef.current.value
             let desc = descriptionRef.current.value
-			let comment = commentRef.current.value
             let nameArray = name.split(' ')
 			console.log(nameArray)
             let descArray = desc.split(' ')
@@ -51,14 +50,13 @@ export default function AddEvent() {
 				userId: currentUser.email,
 				eventName: name,
                 description: desc,
-				commentList: comment,
 				searchValues: searchArray,
-				jointEvent: false,
-				guest: '',
+				jointEvent: true,
+				guest: friendId,
 
 			  };
 			const res = await db.collection('events').doc().set(data);
-			history.push("/")
+			history.push("/FriendList")
 		}
 		catch(err){
 			console.log(err)
@@ -75,7 +73,7 @@ export default function AddEvent() {
 		</div>
 
 		<div className="addEvent">
-		 <h2>Create Event</h2>
+		 <h2>Book Time with {friendId}</h2>
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleSubmit}>
 		  <Form.Group id="date">
@@ -98,17 +96,12 @@ export default function AddEvent() {
 		  		<Form.Control ref={descriptionRef} />
 		  	</Form.Group>
 
-			  <Form.Group id="comment">
-		  		<Form.Label>Comments: </Form.Label>
-		  		<Form.Control ref={commentRef} required />
-		  </Form.Group>
-
 		  	<Button disabled={loading} type="submit">Add Event: </Button>
 		</Form>
 	  </div> 
 	  
 	  <div className="addEvent">
-	  	No longer need to schedule an event? <Link to="/">Cancel </Link>
+	  	No longer want to book time together? <Link to="/FriendList">Cancel </Link>
 	  </div>
 	  </>
 
