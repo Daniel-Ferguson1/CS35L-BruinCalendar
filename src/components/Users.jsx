@@ -22,6 +22,7 @@ function Users() {
 				.get()
 				.then((queryDocumentSnapshot) => {
 					queryDocumentSnapshot.forEach((doc) => {
+						console.log(doc.id)
 						setUsers(doc.get('friends'));
 					})
 				})

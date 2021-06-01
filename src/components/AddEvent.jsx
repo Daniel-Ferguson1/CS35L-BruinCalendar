@@ -40,12 +40,10 @@ export default function AddEvent() {
             let desc = descriptionRef.current.value
 			let comment = commentRef.current.value
             let nameArray = name.split(' ')
-			console.log(nameArray)
+			//console.log(nameArray)
             let descArray = desc.split(' ')
             let searchArray = nameArray.concat(descArray)
             
-
-
 			const data = {
 				dateTime: date.concat(' ').concat(time),
 				userId: currentUser.email,
@@ -57,7 +55,19 @@ export default function AddEvent() {
 				guest: '',
 
 			  };
-			const res = await db.collection('events').doc().set(data);
+			let collectionRef = db.collection('events');
+			let theID = 0;
+			await collectionRef.add(data).then(documentReference => {
+				theID = documentReference.id
+				//console.log(`Added document with name '${documentReference.id}'`);
+			});
+			//const res = await db.collection('events').doc().set(data);
+			const cityRef = db.collection('events').doc(theID);
+
+			const res = await cityRef.set({
+  				eventId: theID
+			}, { merge: true });
+			//console.log(theID)
 			history.push("/")
 		}
 		catch(err){

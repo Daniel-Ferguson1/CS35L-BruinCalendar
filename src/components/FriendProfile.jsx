@@ -24,11 +24,19 @@ class FriendProfile extends React.Component {
   async getEvents(uid, currentUser) {
     let db = firebase.firestore();
     let data = await db.collection('events').where('userId', '==', uid).get()
+    let data3 = await db.collection('events').where('userId', '==', uid).get()
+    .then((queryDocumentSnapshot) => {
+      queryDocumentSnapshot.forEach((doc) => {
+        //console.log(doc.id)
+        //setUsers(doc.get('friends'));
+      })
+    })
     let data2 = await db.collection('events').where('guest', '==', uid).get()
     let singleEvents = [];
     let jointEvents = [];
     for (let item of data2.docs){
       let event = item.data()
+      //console.log(event)
       if(event.userId == currentUser.email){
         jointEvents.push(event)
       }
@@ -63,7 +71,8 @@ class FriendProfile extends React.Component {
         else{
           returnView1 = this.state.eventsPersonal.map((event) =>
             {
-              return <li>{event.eventName}</li>
+              //console.log(event.uid)
+              return <li>{event.id}</li>
             })
         }
 
