@@ -7,7 +7,7 @@ import 'firebase/auth'
 
 
 
-const firebaseConfig2 = {
+const firebaseConfig = {
     apiKey: "AIzaSyAQ4QXGiyUkAViFC5nUmalWLWp1tK2uwnc",
     authDomain: "cs35l-6b371.firebaseapp.com",
     projectId: "cs35l-6b371",
@@ -16,7 +16,7 @@ const firebaseConfig2 = {
     appId: "1:67689612289:web:49db3c0b25f7390138ec00",
     measurementId: "G-84LH8Y502Z"
   }
-  const firebaseConfig = {
+  const firebaseConfig2 = {
     apiKey: "AIzaSyBlptW5oV8_wmlIQ3MFGspR8JWInxvt8X4",
     authDomain: "lukepersonalblazeplan.firebaseapp.com",
     projectId: "lukepersonalblazeplan",
