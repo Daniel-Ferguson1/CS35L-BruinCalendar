@@ -1,17 +1,12 @@
 import React, { useState } from "react";
-// import ReactDOM from 'react-dom';
-// import ReactCalendar from "./ReactCalendar";
 import Search from "./Search";
 import EventList from './EventList'
 import Sidebar from '../feature/Sidebar';
 import Header from './Header';
 import "../index.css";
 import 'react-bootstrap';
-//import Users from './Users'
-
 import ReactCalendar from "react-calendar"; 
 import './Calendar.css';
-// import { BiAlarmSnooze } from "react-icons/bi";
 
 export const HomePage = () => {
   const [ calendarEntry, unhideEvent ] = useState(new Date());
