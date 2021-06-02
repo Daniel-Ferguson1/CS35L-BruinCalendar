@@ -44,7 +44,8 @@ export default function AddFriendEvent() {
             let searchArray = nameArray.concat(descArray)
             
 			const data = {
-				dateTime: date.concat(' ').concat(time),
+				date: date,
+				time: time,
 				userId: currentUser.email,
 				eventName: name,
                 description: desc,
