@@ -76,24 +76,24 @@ function FriendList() {
 
     return (
 	  	<>
-        <div>
-            <Sidebar />
-            <Header />
-		</div>
-        <div className="FriendList">
-	  		<h2>Friends</h2>
-            <strong>Email: </strong> {currentUser.email}
-	  		<div>
-	  			<Button onClick={() => setListType('All')}>All Users</Button>
-                <Button onClick={() => setListType('Friends')}>My Friends</Button>
-	  		</div>
-			<div> 
-	  			<strong>{listType}: </strong> 
-	  			<ul>
-                    {listLine}
-	  			</ul>
-			</div>
-        </div>
+            <div>
+                <Sidebar />
+                <Header />
+            </div>
+            <div className="FriendList">
+                <h2>Friends</h2>
+                <strong>Email: </strong> {currentUser.email}
+                <div>
+                    <Button onClick={() => setListType('All')}>All Users</Button>
+                    <Button onClick={() => setListType('Friends')}>My Friends</Button>
+                </div>
+                <div> 
+                    <strong>{listType}: </strong> 
+                    <ul>
+                        {listLine}
+                    </ul>
+                </div>
+            </div>
 	  	</>
   	);
 }

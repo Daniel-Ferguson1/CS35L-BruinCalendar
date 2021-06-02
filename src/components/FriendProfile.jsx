@@ -5,10 +5,13 @@ import {Link, useHistory} from 'react-router-dom'
 import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
-import { BiExitFullscreen } from 'react-icons/bi';
-import AddFriendEvent from './AddFriendEvent';
-
-
+// import { BiExitFullscreen } from 'react-icons/bi';
+// import AddFriendEvent from './AddFriendEvent';
+// import { RiTreasureMapLine } from 'react-icons/ri';
+import EventDetailWindow from './EventDetailWindow';
+import { Modal } from  './Modal';
+import Sidebar from '../feature/Sidebar';
+import './FriendList.css'
 
 class FriendProfile extends React.Component {
     constructor() {
@@ -17,8 +20,27 @@ class FriendProfile extends React.Component {
       this.state = {
         eventsPersonal: [],
         eventsJoint: [],
-        book: false
+        book: false,
+        selectedEvent: undefined,
+        isWindowOpen: false,
+        dateFormatted: '',
       }
+    }
+
+    onEventSelected = event => {
+      this.setState({
+
+        selectedEvent: event,
+        isWindowOpen: true,
+        dateFormatted: event.date
+      });
+    }
+
+    onCloseDetailWindow = () => {
+      this.setState({
+        selectedEvent: undefined,
+        isWindowOpen: false,
+      });
     }
 
   async getEvents(uid, currentUser) {
@@ -71,8 +93,11 @@ class FriendProfile extends React.Component {
         else{
           returnView1 = this.state.eventsPersonal.map((event) =>
             {
+              
               //console.log(event.uid)
-              return <li>{event.id}</li>
+              return <li>{event.eventName}
+                <Button onClick={() => this.onEventSelected(event)}>Details</Button>
+              </li>
             })
         }
 
@@ -87,6 +112,10 @@ class FriendProfile extends React.Component {
         }
       return (
         <>
+          <div>
+            <Sidebar />
+          </div>
+          <div className="FriendList">
             <h2><strong>User: </strong> {uid}</h2>
             <div>
               <strong>User's Personal Events</strong>
@@ -108,6 +137,15 @@ class FriendProfile extends React.Component {
                 <Button>Book Time With This Friend!</Button>
               </Link>
             </div>
+            <Modal
+              isOpen={this.state.isWindowOpen}
+              onClose={this.onCloseDetailWindow}>
+              <EventDetailWindow 
+                item={this.state.selectedEvent}
+                date={this.state.dateFormatted}
+                close={this.onCloseDetailWindow} />
+            </Modal>
+          </div>
         </>
       )
   }

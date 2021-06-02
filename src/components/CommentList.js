@@ -1,6 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
+import styled from 'styled-components';
 import 'firebase/firestore';
+
+
+const DetailCell = styled.td` 
+  padding: 8px;
+`
+
+const LeftData = styled(DetailCell)`
+font-weight: bold;
+width: 50%;
+`;
+
+const RightData = styled(DetailCell)``;
 
 // need to implement this into the event detail modal
 // need to get user's name corresponding to the comment.userId
@@ -18,8 +31,7 @@ export const CommentList = ({eventId: eventId}) => {
         setComments(commentForEvent)
       }
     fetchComments()
-	}, []) // call this whenever this component is invoked
-  
+	}, [])
   
   return (
     <div>
@@ -29,10 +41,12 @@ export const CommentList = ({eventId: eventId}) => {
         ? comments.map((comment) =>
         {
           return (
-            <>
-              <h3>{comment.email}</h3>
-              <li>Comment : {comment.comments}</li>
-            </>
+            <tbody>
+              <tr>
+                <LeftData>{comment.email}</LeftData>
+                <RightData>{comment.text}</RightData>
+              </tr>
+            </tbody>
           )
         })
         : <p>No comments to this event</p>
