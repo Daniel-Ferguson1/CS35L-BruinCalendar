@@ -34,8 +34,12 @@ const choices = [
   */
 
 const Sidebar = () => {
-    const history = useHistory()
-    //const currentUser = useAuth()
+  const [error, setError] = useState('') 
+	const [events, setEvents] = useState([]) 
+	const { currentUser, logout } = useAuth()
+
+  const history = useHistory()
+  //const currentUser = useAuth()
     
   //create initial menuCollapse state using useState hook
   const [menuCollapse, setMenuCollapse] = useState(false)
@@ -45,6 +49,20 @@ const Sidebar = () => {
     //condition checking to change state from true to false and vice versa
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
+
+  async function handleLogout(){
+		console.log('heyyh')
+		setError("");
+		try{
+			await logout();
+			//console.log('hey')
+			history.push("/login")
+		}
+		catch{
+			//console.log(err)
+			setError("Failed to log out");
+		}
+	}
 
   //console.log('hello')
 
@@ -66,9 +84,7 @@ const Sidebar = () => {
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
-              <MenuItem active={true} icon={<FiHome />}>
-                Home
-              </MenuItem>
+              <MenuItem onClick={() => {history.push("/")}} icon={<FiHome />}>Home</MenuItem>
               <MenuItem onClick={() => {history.push("/FriendList")}} icon={<FaList />}>Friend List</MenuItem>
               {/*<MenuItem icon={<RiPencilLine />}>Profile</MenuItem>*/}
               <MenuItem onClick={() => {history.push("/Dashboard")}} icon={<FaList />}>Profile</MenuItem>
@@ -76,7 +92,7 @@ const Sidebar = () => {
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
-              <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+              <MenuItem onClick={handleLogout} icon={<FiLogOut />}>Logout</MenuItem>
             </Menu>
           </SidebarFooter>
         </ProSidebar>

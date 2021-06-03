@@ -1,0 +1,30 @@
+.FriendList {
+    margin-left: 235px;
+    font-size: 20px;
+}
+
+.list {
+    margin-top: 0;
+}
+
+.friendButton {
+    font-size: 17px;
+    font-family: "Crimson Text", serif;
+}
+
+.chooseOption {
+    font-size: 25px;
+    font-family: "Crimson Text", serif;
+}
+
+.profileWatch {
+    font-size: 18px;
+    font-family: "Crimson Text", serif;
+    background: #2D68C4;
+    color: white;
+    border-radius: 3px;
+}
+
+.profileWatch:hover {
+    cursor: pointer;
+}

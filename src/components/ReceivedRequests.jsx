@@ -75,7 +75,7 @@ function FriendList() {
                         //if(!active){
                             //message = 'Friend Request Sent'
                         //}
-	  					return <li>{user.email} button = <Button onClick={addFriend()}>{message}</Button> </li>
+	  					return <li>{user.email} button = <Button className="friendButton" onClick={addFriend()}>{message}</Button> </li>
                       })}
 	  			</ul>
 			</div>

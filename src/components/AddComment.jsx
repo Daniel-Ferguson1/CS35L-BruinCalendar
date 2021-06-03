@@ -1,12 +1,12 @@
 import React, {useRef, useState} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/firestore';
+import './AddComment.css'
 
-export default function AddComment() {
-	
+export const AddComment = ({ eventId:eventId, onSubmitComment }) => {
 	const commentRef = useRef();
 	const [error, setError] = useState('')
 	const {currentUser} = useAuth()
@@ -19,36 +19,36 @@ export default function AddComment() {
 			setError("");
 			setLoading(true);
 			const db = firebase.firestore()
-            let comment = commentRef.current.value
-			let commentArray = comment.split('LISTBREAK')
+			let comment = commentRef.current.value
 
 			const data = {
-                comments: commentArray,
-				userId: currentUser.uid
-			  };
+				text: comment,
+				email: currentUser.email,
+				eventId: eventId,
+			};
 			const res = await db.collection('comments').doc().set(data);
-			history.push("/")
+			// history.push("/")
 		}
 		catch(err){
 			console.log(err)
 			setError("Failed to add comment");
 		}
 		setLoading(false);
+		onSubmitComment();
 	}
 
 	return ( 
-	  <div>
+	  <div className="body">
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleComments}>
-
-		    <Form.Group id="comment">
+		    <Form.Group id="addComment">
 		  		<Form.Label>Add Comment: </Form.Label> <br></br>
-		  		<Form.Control ref={commentRef} />
+		  		<Form.Control ref={commentRef} /> &nbsp;
 		  	</Form.Group>
-			  
-		  	<Button disabled={loading} type="submit" id="button">Submit</Button>
-		</Form>
-
+				<Button disabled={loading} type="submit" id="button" >Submit</Button>
+			</Form>
 	  </div> 
 	);
 }
+
+export default AddComment;

@@ -22,6 +22,7 @@ function Users() {
 				.get()
 				.then((queryDocumentSnapshot) => {
 					queryDocumentSnapshot.forEach((doc) => {
+						console.log(doc.id)
 						setUsers(doc.get('friends'));
 					})
 				})
@@ -43,7 +44,7 @@ function Users() {
 
     return (
 	  	<>
-	  		<h2>Users</h2>
+	  		<h3>Users</h3>
 	  		<div>
 	  			<Button onClick={() => setListType('All')}>All Users</Button>
                 <Button onClick={() => setListType('Friends')}>My Friends</Button>

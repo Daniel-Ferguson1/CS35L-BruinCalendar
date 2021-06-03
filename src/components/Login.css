@@ -1,0 +1,50 @@
+.login {
+    position: fixed;
+    left: 50%;
+    bottom: 30%;
+    transform: translate(-50%, 10%);
+    border: 2px solid black;
+    background-color: #add8e6;
+    border-radius: 5px;
+    z-index: 99;
+    width: 500px;
+    max-width: 70%;
+    height: 500px;
+    transition: 100ms ease-in-out;
+}
+
+.loginHeader {
+    padding: 15px 30px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    background-color: #2D68C4;
+    font-family: "Crimson Text", serif;
+}
+
+.loginBody {
+    padding: 30px 30px;
+    text-align: center;
+    font-size: 22px;
+    font-family: "Crimson Text", serif;
+    font-weight: bold;
+    line-height: 75px;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+}
+
+.loginButton {
+    font-family: "Crimson Text", serif;
+    font-size: 22px;
+}
+
+.field {
+    font-size: 20px;
+    font-family: "Crimson Text", serif;
+}
