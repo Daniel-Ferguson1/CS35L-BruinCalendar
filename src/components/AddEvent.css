@@ -6,6 +6,9 @@
 .eventButton {
     font-size: 18px;
     font-family: "Crimson Text", serif;
+    background: #2D68C4;
+    color: white;
+    border-radius: 3px;
     margin: 5px 0px;
 }
 
@@ -17,4 +20,22 @@
 
 .Cancellation {
     margin-top: 20px;
+}
+
+.eventForm {
+    display: flex;
+    justify-content: space-between;
+    width: 330px;
+}
+
+.dateForm {
+    display: flex;
+    justify-content: space-between;
+    width: 309px;
+}
+
+.timeForm {
+    display: flex;
+    justify-content: space-between;
+    width: 262px;
 }

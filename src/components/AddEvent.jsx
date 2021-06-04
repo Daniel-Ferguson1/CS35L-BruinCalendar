@@ -89,27 +89,27 @@ export default function AddEvent() {
 		 <h2>Create Event</h2>
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleSubmit}>
-		  <Form.Group id="date">
+		  <Form.Group className="dateForm">
 		  	<Form.Label>Date: </Form.Label>
 		  	<Form.Control class="addEventInput" type="date" ref={dateRef} required />
 		  </Form.Group>
 
-          <Form.Group id="time">
+          <Form.Group className="timeForm">
 		  	<Form.Label>Time: </Form.Label>
 		  	<Form.Control class="addEventInput" type="time" ref={timeRef} required />
 		  </Form.Group>
 
-		  <Form.Group id="name">
+		  <Form.Group className="eventForm">
 		  		<Form.Label>Event Name: </Form.Label>
 		  		<Form.Control class="addEventInput" ref={nameRef} required />
 		  </Form.Group>
 
-		    <Form.Group id="description">
+		    <Form.Group className="eventForm">
 		  		<Form.Label>Event Description: </Form.Label>
 		  		<Form.Control class="addEventInput" ref={descriptionRef} />
 		  	</Form.Group>
 
-			  <Form.Group id="comment">
+			  <Form.Group className="eventForm">
 		  		<Form.Label>Comments: </Form.Label>
 		  		<Form.Control class="addEventInput" ref={commentRef} required />
 		  </Form.Group>

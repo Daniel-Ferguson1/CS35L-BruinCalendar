@@ -51,7 +51,6 @@ const Sidebar = () => {
   };
 
   async function handleLogout(){
-		console.log('heyyh')
 		setError("");
 		try{
 			await logout();

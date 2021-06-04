@@ -56,10 +56,7 @@ function Dashboard() {
 	  			))}
 	  		</ul>
 			<div>
-	  			<Link to="/addEvent">Add Event</Link>
-	  		</div>
-	  		<div>
-	  			<Link to="/PasswordChange">Change Password</Link>
+	  			<Link to="/addEvent"><button className="profileWatch">Add Event</button></Link>
 	  		</div>
 		</div>
 	  	</>

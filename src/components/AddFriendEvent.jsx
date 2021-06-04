@@ -87,27 +87,27 @@ export default function AddFriendEvent() {
 		 <h2>Book Time with {friendId}</h2>
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleSubmit}>
-		  <Form.Group id="date">
+		  <Form.Group className="eventForm">
 		  	<Form.Label>Date: </Form.Label>
-		  	<Form.Control type="date" ref={dateRef} required />
+		  	<Form.Control class="addEventInput" type="date" ref={dateRef} required />
 		  </Form.Group>
 
-          <Form.Group id="time">
+          <Form.Group className="eventForm">
 		  	<Form.Label>Time: </Form.Label>
-		  	<Form.Control type="time" ref={timeRef} required />
+		  	<Form.Control class="addEventInput" type="time" ref={timeRef} required />
 		  </Form.Group>
 
-		  <Form.Group id="name">
+		  <Form.Group className="eventForm">
 		  		<Form.Label>Event Name: </Form.Label>
-		  		<Form.Control ref={nameRef} required />
+		  		<Form.Control class="addEventInput" ref={nameRef} required />
 		  </Form.Group>
 
-		    <Form.Group id="description">
+		    <Form.Group className="eventForm">
 		  		<Form.Label>Event Description: </Form.Label>
-		  		<Form.Control ref={descriptionRef} />
+		  		<Form.Control class="addEventInput" ref={descriptionRef} />
 		  	</Form.Group>
 
-		  	<Button className="friendButton" disabled={loading} type="submit">Add Event</Button>
+		  	<Button className="eventButton" disabled={loading} type="submit">Add Event</Button>
 		</Form>
 	  </div> 
 	  

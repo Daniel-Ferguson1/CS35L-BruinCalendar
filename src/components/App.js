@@ -10,7 +10,6 @@ import HomePage from './HomePage';
 import FriendList from './FriendList'
 import FriendProfile from './FriendProfile';
 import AddFriendEvent from './AddFriendEvent';
-import changePassword from './ChangePassword';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
 						<Route path='/FriendList' component={FriendList}/>
 						<Route path='/friendProfile' component={FriendProfile}/>
 						<Route path='/bookTime' component={AddFriendEvent}/>
-						<Route path='/PasswordChange' component={changePassword}/>
 	  				</Switch>
 	  			</AuthProvider>
 	  		</Router>
