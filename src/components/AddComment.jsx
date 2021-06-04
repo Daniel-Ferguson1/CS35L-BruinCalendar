@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
-import { useHistory} from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 import './AddComment.css'
@@ -11,7 +10,6 @@ export const AddComment = ({ eventId:eventId, onSubmitComment }) => {
 	const [error, setError] = useState('')
 	const {currentUser} = useAuth()
 	const [loading, setLoading] = useState(false)
-	const history = useHistory()
 
 	async function handleComments(str) {
 		str.preventDefault()
@@ -27,7 +25,6 @@ export const AddComment = ({ eventId:eventId, onSubmitComment }) => {
 				eventId: eventId,
 			};
 			const res = await db.collection('comments').doc().set(data);
-			// history.push("/")
 		}
 		catch(err){
 			console.log(err)
@@ -38,16 +35,16 @@ export const AddComment = ({ eventId:eventId, onSubmitComment }) => {
 	}
 
 	return ( 
-	  <div className="body">
-		 {error && <Alert variant="danger">{error}</Alert>}
-		 <Form onSubmit={handleComments}>
-		    <Form.Group id="addComment">
-		  		<Form.Label>Add Comment: </Form.Label> <br></br>
-		  		<Form.Control ref={commentRef} /> &nbsp;
-		  	</Form.Group>
-				<Button disabled={loading} type="submit" id="button" >Submit</Button>
-			</Form>
-	  </div> 
+	<div className="body">
+		{error && <Alert variant="danger">{error}</Alert>}
+		<Form onSubmit={handleComments}>
+			<Form.Group id="addComment">
+				<Form.Label>Add Comment: </Form.Label> <br></br>
+				<Form.Control ref={commentRef} /> &nbsp;
+			</Form.Group>
+			<Button disabled={loading} type="submit" id="button" >Submit</Button>
+		</Form>
+	</div> 
 	);
 }
 

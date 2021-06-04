@@ -13,6 +13,7 @@ import AddFriendEvent from './AddFriendEvent';
 
 function App() {
   return (
+<<<<<<< HEAD
   	
 	  	<div>
 	  		<Router>
@@ -32,6 +33,26 @@ function App() {
 	  	</div>
   
   	);
+=======
+		<div>
+			<Router>
+				<AuthProvider>
+					<Switch>
+						<PrivateRoutes exact path='/' component={HomePage}/>
+						<Route path='/signup' component={Signup}/>
+						<Route path='/login' component={Login}/>
+					<Route path='/addEvent' component={AddEvent}/>
+					<Route path='/Dashboard' component={Dashboard}/>
+					<Route path='/FriendList' component={FriendList}/>
+					<Route path='/friendProfile' component={FriendProfile}/>
+					<Route path='/bookTime' component={AddFriendEvent}/>
+					<Route path='/PasswordChange' component={changePassword}/>
+					</Switch>
+				</AuthProvider>
+			</Router>
+		</div>
+	);
+>>>>>>> 4309e924a2dc431abf737874ed198e450e6a38f5
 }
 
 export default App;

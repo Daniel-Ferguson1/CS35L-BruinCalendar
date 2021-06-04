@@ -5,9 +5,6 @@ import {Link, useHistory} from 'react-router-dom'
 import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
-// import { BiExitFullscreen } from 'react-icons/bi';
-// import AddFriendEvent from './AddFriendEvent';
-// import { RiTreasureMapLine } from 'react-icons/ri';
 import EventDetailWindow from './EventDetailWindow';
 import { Modal } from  './Modal';
 import Sidebar from '../feature/Sidebar';

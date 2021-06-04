@@ -1,6 +1,6 @@
 .addEvent {
-    margin-left: 235px;
-    font-size: 18px;
+	margin-left: 235px;
+	font-size: 18px;
 }
 
 .eventButton {
@@ -13,9 +13,9 @@
 }
 
 .addEventInput {
-    font-size: 18px;
-    font-family: "Crimson Text", serif;
-    margin: 5px 0px;
+	font-size: 18px;
+	font-family: "Crimson Text", serif;
+	margin: 5px 0px;
 }
 
 .Cancellation {

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 import Search from "./Search";
 import EventList from './EventList'
 import Sidebar from '../feature/Sidebar';
@@ -43,6 +44,7 @@ export const HomePage = () => {
 	  			<Link to="/addEvent" className="eventlink"><button className="profileWatch">Add Event</button></Link>
 	  		</div>
           <div className='eventlist'>
+            <Link to="/addEvent">Add Event</Link>
             <EventList dateClicked={entryDate} dateFormatted={formattedDate} />
           </div>
       </div>

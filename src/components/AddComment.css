@@ -1,16 +1,16 @@
 #addComment {
-    display: inline;
-    font-size: 20px;
-    font-weight: bold;
+	display: inline;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 #button {
-    display: inline;
-    font-family: "Crimson Text", serif;
-    font-size: 15px;
+	display: inline;
+	font-family: "Crimson Text", serif;
+	font-size: 15px;
 }
 
 .body {
-    margin: 15px;
-    padding: 0;
+	margin: 15px;
+	padding: 0;
 }

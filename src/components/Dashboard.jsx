@@ -1,8 +1,7 @@
 import React, {useRef, useState, useEffect} from 'react';
-import { Form, Button, Alert} from 'react-bootstrap';
+import { Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
-import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 import Sidebar from '../feature/Sidebar';
@@ -40,21 +39,10 @@ function Dashboard() {
 		fetchEvents()
 	}, [])
     return (
-	  	<>
+		<>
 		<div>
-          <Sidebar />
-          <Header />
-		</div>
-
-		<div className="Header">
-	  		<h1>Profile</h1>
-	  		{error && <Alert variant="danger">{error}</Alert>}
-	  		<strong>Email: </strong> {currentUser.email}
-	  		<ul>
-	  			{events.map(event => (
-	  				<li>{event.eventName}</li>
-	  			))}
-	  		</ul>
+			<Header />
+			<Sidebar />
 			<div>
 	  			<Link to="/addEvent"><button className="profileWatch">Add Event</button></Link>
 	  		</div>

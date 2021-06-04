@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import 'firebase/firestore';
 import './CommentList.css'
 
-
 const DetailCell = styled.td` 
   padding: 4px;
 `
@@ -16,8 +15,6 @@ width: 50%;
 
 const RightData = styled(DetailCell)``;
 
-// need to implement this into the event detail modal
-// need to get user's name corresponding to the comment.userId
 export const CommentList = ({eventId: eventId}) => {
   const db = firebase.firestore()
   const [comments, setComments] = useState([])

@@ -6,12 +6,12 @@ import AddComment from './AddComment';
 import './EventDetailWindow.css'
 
 const Form = styled.div`
-    width: 550px;
-    margin: 0 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 550px;
+  margin: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Heading = styled.h1`
@@ -29,7 +29,6 @@ const DetailSection = styled.table`
 const DetailCell = styled.td` 
   padding: 8px;
 `
-
 
 const LeftData = styled(DetailCell)`
 font-weight: bold;
