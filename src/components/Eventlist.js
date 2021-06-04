@@ -5,6 +5,7 @@ import 'firebase/firestore';
 import { Button } from 'react-bootstrap';
 import EventDetailWindow from './EventDetailWindow';
 import { Modal } from  './Modal';
+import './EventList.css'
 
 export const EventList = ({
   dateClicked: day,
@@ -42,28 +43,32 @@ export const EventList = ({
 		fetchEvents()
 	}, [dateFormatted]) 
 
+  var convertTime = require('convert-time');
+
   return (
     <>
-      <h2>Events on { dateFormatted } </h2>
-      <ul>
-      {events.length > 0
-        ? events.map((event) =>
-        {
-          return <li>Event at {event.time} : {event.eventName}
-            <Button onClick={() => onEventSelected(event)}>Details</Button>
-          </li>
-        })
-        : <p>No events to display</p>
-      }
-      </ul>
-      <Modal
-        isOpen={isWindowOpen}
-        onClose={onCloseDetailWindow}>
-        <EventDetailWindow 
-          item={selectedEvent}
-          date={dateFormatted}
-          close={onCloseDetailWindow} />
-      </Modal>
+      <h2 class="title">Events on { dateFormatted } </h2>
+      <div class="listview">
+        <ul class="listview">
+        {events.length > 0
+          ? events.map((event) =>
+          {
+            return <li><Button className="name" onClick={() => onEventSelected(event)}>{event.eventName}</Button>
+            <p class="time">{convertTime(event.time, 'hh:mm A')}</p>
+            </li>
+          })
+          : <li class="noevents">No events to display</li>
+        }
+        </ul>
+        <Modal
+          isOpen={isWindowOpen}
+          onClose={onCloseDetailWindow}>
+          <EventDetailWindow 
+            item={selectedEvent}
+            date={dateFormatted}
+            close={onCloseDetailWindow} />
+        </Modal>
+      </div>
     </>
   );
 }

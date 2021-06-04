@@ -5,42 +5,41 @@ import {Link, useHistory} from 'react-router-dom'
 import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
-// import { BiExitFullscreen } from 'react-icons/bi';
-// import AddFriendEvent from './AddFriendEvent';
-// import { RiTreasureMapLine } from 'react-icons/ri';
 import EventDetailWindow from './EventDetailWindow';
 import { Modal } from  './Modal';
 import Sidebar from '../feature/Sidebar';
 import './FriendList.css'
+import Header from './Header'
 
 class FriendProfile extends React.Component {
-  constructor() {
-    super()
-    const events = [];
-    this.state = {
-      eventsPersonal: [],
-      eventsJoint: [],
-      book: false,
-      selectedEvent: undefined,
-      isWindowOpen: false,
-      dateFormatted: '',
+    constructor() {
+      super()
+      const events = [];
+      this.state = {
+        eventsPersonal: [],
+        eventsJoint: [],
+        book: false,
+        selectedEvent: undefined,
+        isWindowOpen: false,
+        dateFormatted: '',
+      }
     }
-  }
 
-  onEventSelected = event => {
-    this.setState({
-      selectedEvent: event,
-      isWindowOpen: true,
-      dateFormatted: event.date
-    });
-  }
+    onEventSelected = event => {
+      this.setState({
 
-  onCloseDetailWindow = () => {
-    this.setState({
-      selectedEvent: undefined,
-      isWindowOpen: false,
-    });
-  }
+        selectedEvent: event,
+        isWindowOpen: true,
+        dateFormatted: event.date
+      });
+    }
+
+    onCloseDetailWindow = () => {
+      this.setState({
+        selectedEvent: undefined,
+        isWindowOpen: false,
+      });
+    }
 
   async getEvents(uid, currentUser) {
     let db = firebase.firestore();
@@ -78,75 +77,76 @@ class FriendProfile extends React.Component {
   }
   
   render(){
-    const { stateData } = this.props.location
-    let uid = stateData.user
-    let currentUser = stateData.currentUser
-    //console.log(currentUser)
-    this.getEvents(uid, currentUser);
-    let returnView1;
-    let returnView2;
+        const { stateData } = this.props.location
+        let uid = stateData.user
+        let currentUser = stateData.currentUser
+        //console.log(currentUser)
+        this.getEvents(uid, currentUser);
+        let returnView1;
+        let returnView2;
 
-    if(this.state.eventsPersonal.length == 0){
-      returnView1 =  <p>No events to display</p>
-    }
-    else{
-      returnView1 = this.state.eventsPersonal.map((event) =>
-        {
-          
-          //console.log(event.uid)
-          return <li>{event.eventName}
-            <Button onClick={() => this.onEventSelected(event)}>Details</Button>
-          </li>
-        })
-    }
+        if(this.state.eventsPersonal.length == 0){
+          returnView1 =  <p>No events to display</p>
+        }
+        else{
+          returnView1 = this.state.eventsPersonal.map((event) =>
+            {
+              
+              //console.log(event.uid)
+              return <li>{event.eventName}
+                <Button className="friendButton" onClick={() => this.onEventSelected(event)}>Details</Button>
+              </li>
+            })
+        }
 
-    if(this.state.eventsJoint.length == 0){
-      returnView2 =  <p>No events to display</p>
-    }
-    else{
-      returnView2 = this.state.eventsJoint.map((event) =>
-        {
-          return <li>{event.eventName}</li>
-        })
-    }
-    return (
-      <>
-        <div>
-          <Sidebar />
-        </div>
-        <div className="FriendList">
-          <h2><strong>User: </strong> {uid}</h2>
+        if(this.state.eventsJoint.length == 0){
+          returnView2 =  <p>No events to display</p>
+        }
+        else{
+          returnView2 = this.state.eventsJoint.map((event) =>
+            {
+              return <li>{event.eventName}</li>
+            })
+        }
+      return (
+        <>
           <div>
-            <strong>User's Personal Events</strong>
-            <ul>
-              {returnView1}
-            </ul>
+            <Header />
+            <Sidebar />
           </div>
-          <div>
-            <strong>Joint Events</strong>
-            <ul>
-              {returnView2}
-            </ul>
+          <div className="FriendList">
+            <h2><strong>User: </strong> {uid}</h2>
+            <div>
+              <strong>User's Personal Events</strong>
+              <ul>
+                {returnView1}
+              </ul>
+            </div>
+            <div>
+              <strong>Joint Events</strong>
+              <ul>
+                {returnView2}
+              </ul>
+            </div>
+            <div>
+              <Link to={{
+                pathname: "/bookTime",
+                friendId: uid // your data array of objects
+                }}>
+                <Button className="friendButton">Book Time With This Friend!</Button>
+              </Link>
+            </div>
+            <Modal
+              isOpen={this.state.isWindowOpen}
+              onClose={this.onCloseDetailWindow}>
+              <EventDetailWindow 
+                item={this.state.selectedEvent}
+                date={this.state.dateFormatted}
+                close={this.onCloseDetailWindow} />
+            </Modal>
           </div>
-          <div>
-            <Link to={{
-              pathname: "/bookTime",
-              friendId: uid // your data array of objects
-              }}>
-              <Button>Book Time With This Friend!</Button>
-            </Link>
-          </div>
-          <Modal
-            isOpen={this.state.isWindowOpen}
-            onClose={this.onCloseDetailWindow}>
-            <EventDetailWindow 
-              item={this.state.selectedEvent}
-              date={this.state.dateFormatted}
-              close={this.onCloseDetailWindow} />
-          </Modal>
-        </div>
-      </>
-    )
+        </>
+      )
   }
 }
 //<Button onClick={() => setListType('All')}>All Users</Button>

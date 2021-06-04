@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
+import './Login.css'
 
 export default function Login() {
 	const emailRef = useRef();
@@ -26,26 +27,24 @@ export default function Login() {
 	}
 
 	return ( 
-		<>
-	  <div>
-		 <h2>Log In</h2>
-		 {error && <Alert variant="danger">{error}</Alert>}
-		 <Form onSubmit={handleSubmit}>
-		  <Form.Group id="email">
-		  	<Form.Label>Email</Form.Label>
-		  	<Form.Control type="email" ref={emailRef} required />
-		  </Form.Group>
-		  <Form.Group id="password">
-		  		<Form.Label>Password</Form.Label>
-		  		<Form.Control type="password" ref={passwordRef} required />
-		  </Form.Group>
-		  	<Button disabled={loading} type="submit">Log In</Button>
-		</Form>
-	  </div> 
-	  <div>
-	  	Need an account? <Link to="/signup">Sign Up </Link>
-	  </div>
-	  </>
+		<div className="login">
+			<div class="loginHeader">Log In</div>
+			<div class="loginBody">
+				{error && <Alert variant="danger">{error}</Alert>}
+				<Form id="entry" onSubmit={handleSubmit}>
+				<Form.Group id="email">
+					<Form.Label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Form.Label>
+					<Form.Control className="field" type="email" ref={emailRef} required />
+				</Form.Group>
+				<Form.Group id="password">
+						<Form.Label>Password:&nbsp;&nbsp;</Form.Label>
+						<Form.Control className="field" type="password" ref={passwordRef} required />
+				</Form.Group>
+					<Button className="loginButton" disabled={loading} type="submit">Log In</Button>
+				</Form>
+				Need an account? <Link to="/signup">Sign Up </Link>
+			</div>
+		</div>
 
 	);
 }

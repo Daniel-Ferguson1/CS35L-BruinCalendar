@@ -1,13 +1,13 @@
 import React, {useRef, useState, useEffect} from 'react';
-import { Form, Button, Alert} from 'react-bootstrap';
+import { Alert} from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
-import Users from "./Users"
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 import Sidebar from '../feature/Sidebar';
 import Header from './Header';
 import './Header.css'
+import './Dashboard.css'
 
 function Dashboard() {
 	const [error, setError] = useState('') 
@@ -29,12 +29,6 @@ function Dashboard() {
 		}
 	}
 
-	async function addFriend(){
-        //condition checking to change state from true to false and vice versa
-        console.log('hey')
-        //console.log(item.email)
-    }
-
 	useEffect(() => {
 		const fetchEvents = async () => {
 			const db = firebase.firestore()
@@ -45,33 +39,29 @@ function Dashboard() {
 		fetchEvents()
 	}, [])
     return (
-	  	<>
-		<div>
-          <Sidebar />
-          <Header />
-		</div>
-
-		<div className="Header">
-	  		<h2>Profile</h2>
-	  		{error && <Alert variant="danger">{error}</Alert>}
-	  		<strong>Email: </strong> {currentUser.email}
-	  		<ul>
-	  			{events.map(event => (
-	  				<li>{event.eventName}</li>
-	  			))}
-	  		</ul>
+		<>
 			<div>
-	  			<Link to="/addEvent">Add Event</Link>
-	  		</div>
-			<Users/>
-	  		<div>
-	  			<Link to="/update-profile">Update Profile</Link>
-	  		</div>
-	  		<div>
-	  			<Button variant="link" onClick={handleLogout}>Log Out</Button>
-	  		</div>
-		</div>
-	  	</>
-  	);
+				<Sidebar />
+				<Header />
+			</div>
+	
+			<div className="Header">
+				<h1>Profile</h1>
+				{error && <Alert variant="danger">{error}</Alert>}
+				<strong>Email: </strong> {currentUser.email}
+				<ul>
+					{events.map(event => (
+						<li>{event.eventName}</li>
+					))}
+				</ul>
+				<div>
+					<Link to="/addEvent">Add Event</Link>
+				</div>
+				<div>
+					<Link to="/PasswordChange">Change Password</Link>
+				</div>
+			</div>
+		</>
+	);
 }
 export default Dashboard;

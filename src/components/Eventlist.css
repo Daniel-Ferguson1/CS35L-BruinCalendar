@@ -1,12 +1,38 @@
-/* .Eventlist {
-    margin-left: 240px;
-    margin-right: 380px;
+.listview {
+	text-align: left;
+	font-size: 18px;
+	margin: 0;
 }
 
-#Elist {
-    height: 50px;
+
+.title {
+	font-size: 24px;
+	margin: 12px 0 0 0;
 }
 
-#Button {
-    height: 50px;
-} */
+.name {
+	background:none; 
+	border:none;
+	font-family: "Crimson Text", serif;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+.name:hover { 
+	color: #2D68C4; 
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+.time {
+	margin: 0 0 10px 0;
+	font-size: 17px;
+}
+
+.noevents {
+	padding: 0;
+	margin: 0;
+}

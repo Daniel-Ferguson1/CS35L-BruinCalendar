@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import styled from 'styled-components';
 import 'firebase/firestore';
-
+import './CommentList.css'
 
 const DetailCell = styled.td` 
-  padding: 8px;
+  padding: 4px;
 `
 
 const LeftData = styled(DetailCell)`
@@ -15,8 +15,6 @@ width: 50%;
 
 const RightData = styled(DetailCell)``;
 
-// need to implement this into the event detail modal
-// need to get user's name corresponding to the comment.userId
 export const CommentList = ({eventId: eventId}) => {
   const db = firebase.firestore()
   const [comments, setComments] = useState([])
@@ -35,18 +33,20 @@ export const CommentList = ({eventId: eventId}) => {
   
   return (
     <div>
-      <h2>Comments</h2>
-      <ul>
+      <p class="item">Comments: </p>
+      <ul class="commentList">
       {comments.length > 0
         ? comments.map((comment) =>
         {
           return (
-            <tbody>
-              <tr>
-                <LeftData>{comment.email}</LeftData>
-                <RightData>{comment.text}</RightData>
-              </tr>
-            </tbody>
+              <tbody>
+                <tr>
+                  <li>
+                    <LeftData class="user">{comment.email}</LeftData>
+                    <RightData class="comment">{comment.text}</RightData>
+                  </li>
+                </tr>
+              </tbody>
           )
         })
         : <p>No comments to this event</p>

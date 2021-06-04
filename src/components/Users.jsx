@@ -44,7 +44,7 @@ function Users() {
 
     return (
 	  	<>
-	  		<h2>Users</h2>
+	  		<h3>Users</h3>
 	  		<div>
 	  			<Button onClick={() => setListType('All')}>All Users</Button>
                 <Button onClick={() => setListType('Friends')}>My Friends</Button>

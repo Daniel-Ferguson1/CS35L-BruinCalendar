@@ -7,6 +7,7 @@ import "../index.css";
 import 'react-bootstrap';
 import ReactCalendar from "react-calendar"; 
 import './Calendar.css';
+import './HomePage.css';
 
 export const HomePage = () => {
   const [ calendarEntry, unhideEvent ] = useState(new Date());
