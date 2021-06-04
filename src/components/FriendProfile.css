@@ -1,0 +1,14 @@
+.friendItem {
+	background:none; 
+	border:none;
+	font-family: "Crimson Text", serif;
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+
+.friendItem:hover { 
+	color: #2D68C4; 
+	text-decoration: underline;
+	cursor: pointer;
+}

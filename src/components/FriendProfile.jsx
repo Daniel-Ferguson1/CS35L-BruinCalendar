@@ -10,6 +10,7 @@ import { Modal } from  './Modal';
 import Sidebar from '../feature/Sidebar';
 import './FriendList.css'
 import Header from './Header'
+import './FriendProfile.css'
 
 class FriendProfile extends React.Component {
     constructor() {
@@ -47,8 +48,6 @@ class FriendProfile extends React.Component {
     let data3 = await db.collection('events').where('userId', '==', uid).get()
     .then((queryDocumentSnapshot) => {
       queryDocumentSnapshot.forEach((doc) => {
-        //console.log(doc.id)
-        //setUsers(doc.get('friends'));
       })
     })
     let data2 = await db.collection('events').where('guest', '==', uid).get()
@@ -56,7 +55,6 @@ class FriendProfile extends React.Component {
     let jointEvents = [];
     for (let item of data2.docs){
       let event = item.data()
-      //console.log(event)
       if(event.userId == currentUser.email){
         jointEvents.push(event)
       }
@@ -93,8 +91,8 @@ class FriendProfile extends React.Component {
             {
               
               //console.log(event.uid)
-              return <li>{event.eventName}
-                <Button className="friendButton" onClick={() => this.onEventSelected(event)}>Details</Button>
+              return <li>
+                <Button className="friendItem" onClick={() => this.onEventSelected(event)}>{event.eventName}</Button>
               </li>
             })
         }
@@ -105,14 +103,16 @@ class FriendProfile extends React.Component {
         else{
           returnView2 = this.state.eventsJoint.map((event) =>
             {
-              return <li>{event.eventName}</li>
+              return <li>
+                <Button className="friendItem" onClick={() => this.onEventSelected(event)}>{event.eventName}</Button>
+                </li>
             })
         }
       return (
         <>
           <div>
-            <Header />
             <Sidebar />
+            <Header />
           </div>
           <div className="FriendList">
             <h2><strong>User: </strong> {uid}</h2>
@@ -133,7 +133,7 @@ class FriendProfile extends React.Component {
                 pathname: "/bookTime",
                 friendId: uid // your data array of objects
                 }}>
-                <Button className="friendButton">Book Time With This Friend!</Button>
+                <Button className="profileWatch">Book Time With This Friend!</Button>
               </Link>
             </div>
             <Modal
