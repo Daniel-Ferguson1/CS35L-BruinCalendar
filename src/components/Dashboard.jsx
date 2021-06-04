@@ -54,7 +54,9 @@ function Dashboard() {
 						<li>{event.eventName}</li>
 					))}
 				</ul>
-
+				<div>
+					<Link to="/addEvent">Add Event</Link>
+				</div>	
 				<div>
 					<Link to="/PasswordChange">Change Password</Link>
 				</div>
