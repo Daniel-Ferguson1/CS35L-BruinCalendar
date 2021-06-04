@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import CommentList from './CommentList';
@@ -43,40 +43,42 @@ export const EventDetailWindow = ({ item:event, date:date, close = () => {} }) =
   const { time, description, eventName, jointEvent, guest, eventId, userId } = event || {};
 
   return (
-    <Form>
-      <Heading>Details about Event on { date }</Heading>
-      <DetailSection>
-        <tbody class='eventinfo'>
-          <tr>
-            <LeftData>Event Name: </LeftData>
-            <RightData>{ eventName }</RightData>
-          </tr>
-          <tr>
-            <LeftData>Event Creator: </LeftData>
-            <RightData>{ userId }</RightData>
-          </tr>
-          <tr>
-            <LeftData>Time: </LeftData>
-            <RightData>{ time }</RightData>
-          </tr>
-          <tr>
-            <LeftData>Description: </LeftData>
-            <RightData>{ description }</RightData>
-          </tr>
-          {jointEvent &&
+    <div className="wholeWindow">
+      <Form>
+        <Heading>Details about Event on { date }</Heading>
+        <DetailSection>
+          <tbody class='eventinfo'>
             <tr>
-              <LeftData>This event with: </LeftData>
-              <RightData>{ guest }</RightData>
+              <LeftData>Event Name: </LeftData>
+              <RightData>{ eventName }</RightData>
             </tr>
-          }
-        </tbody>
-      </DetailSection>
-      <div>
-        <CommentList eventId={eventId}/>
+            <tr>
+              <LeftData>Event Creator: </LeftData>
+              <RightData>{ userId }</RightData>
+            </tr>
+            <tr>
+              <LeftData>Time: </LeftData>
+              <RightData>{ time }</RightData>
+            </tr>
+            <tr>
+              <LeftData>Description: </LeftData>
+              <RightData>{ description }</RightData>
+            </tr>
+            {jointEvent &&
+              <tr>
+                <LeftData>This event is with: </LeftData>
+                <RightData>{ guest }</RightData>
+              </tr>
+            }
+          </tbody>
+        </DetailSection>
+        <div>
+          <CommentList eventId={eventId}/>
+        </div>
+        <AddComment eventId={eventId} onSubmitComment={close}/>
+        <Button className="cancel" onClick={close}>Cancel</Button>
+      </Form>
       </div>
-      <AddComment eventId={eventId} onSubmitComment={close}/>
-      <Button className="cancel" onClick={close}>Cancel</Button>
-    </Form>
   )
 }
 

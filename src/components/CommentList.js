@@ -41,7 +41,7 @@ export const CommentList = ({eventId: eventId}) => {
           return (
               <tbody>
                 <tr>
-                  <li>
+                  <li class="listofcomments">
                     <LeftData class="user">{comment.email}</LeftData>
                     <RightData class="comment">{comment.text}</RightData>
                   </li>

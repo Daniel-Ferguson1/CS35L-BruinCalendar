@@ -1,8 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
-import {useAuth} from '../contexts/AuthContext'
-import { useHistory} from 'react-router-dom'
-import firebase from 'firebase/app'
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 function FriendList() {

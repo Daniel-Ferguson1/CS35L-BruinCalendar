@@ -4,6 +4,7 @@ import {useAuth} from '../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/firestore';
+import './Signup.css'
 
 export default function Signup() {
 	const emailRef = useRef();
@@ -44,39 +45,44 @@ export default function Signup() {
 	}
 
 	return ( 
-		<>
-	  <div>
-		 <h2>Sign Up</h2>
-		 {error && <Alert variant="danger">{error}</Alert>}
-		 <Form onSubmit={handleSubmit}>
-		 <Form.Group>
-		  		<Form.Label>Username</Form.Label>
-		  		<Form.Control ref={userRef} required />
-		  </Form.Group>
-		  <Form.Group>
-		  		<Form.Label>School</Form.Label>
-		  		<Form.Control ref={schoolRef} />
-		  </Form.Group>
-		  <Form.Group id="email">
-		  	<Form.Label>Email</Form.Label>
-		  	<Form.Control type="email" ref={emailRef} required />
-		  </Form.Group>
-		  <Form.Group id="password">
-		  		<Form.Label>Password</Form.Label>
-		  		<Form.Control type="password" ref={passwordRef} required />
-		  </Form.Group>
-		  	<Form.Group id="password-confirm">
-		  		<Form.Label>Password Confirmation</Form.Label>
-		  		<Form.Control type="password" ref={passwordConfirmRef} required />
-		  	</Form.Group>
-		  	<Button disabled={loading} type="submit">Sign Up</Button>
-		</Form>
-	  </div> 
-	  <div>
-	  	Already have an account? <Link to="/login">Log In </Link>
+	  <div className="signup">
+		<div class="signupHeader">Sign Up</div>
+		<div class="signupBody">
+			{error && <Alert variant="danger">{error}</Alert>}
+			<Form id="entry" onSubmit={handleSubmit}>
+			<Form.Group>
+					<Form.Label>Username: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</Form.Label>
+					<Form.Control className="field" ref={userRef} required />
+			</Form.Group>
+			<Form.Group>
+					<Form.Label>School: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</Form.Label>
+					<Form.Control className="field" ref={schoolRef} />
+			</Form.Group>
+			<Form.Group id="email">
+				<Form.Label>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</Form.Label>
+				<Form.Control className="field" type="email" ref={emailRef} required />
+			</Form.Group>
+			<Form.Group id="password">
+					<Form.Label>Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</Form.Label>
+					<Form.Control className="field" type="password" ref={passwordRef} required />
+			</Form.Group>
+				<Form.Group id="password-confirm">
+					<Form.Label>Confirm Password: </Form.Label>
+					<Form.Control className="field" type="password" ref={passwordConfirmRef} required />
+				</Form.Group>
+				<Button className="signupButton" disabled={loading} type="submit">Sign Up</Button>
+			</Form>
+	  		Already have an account? <Link to="/login"><Button className="signupButton">Log In</Button></Link>
+	  	</div>
 	  </div>
-	  </>
-
 	);
 }
 

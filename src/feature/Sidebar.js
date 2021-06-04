@@ -1,30 +1,22 @@
-import React, { useState, useRef, useEffect, useForm } from 'react'
+import React, { useState } from 'react'
 import "react-pro-sidebar/dist/css/styles.css";
 import "./Sidebar.css";
 import {useAuth} from '../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
-import Users from "../components/Users"
-
+import { useHistory} from 'react-router-dom'
 import UCLA_logo from "./UCLA_logo.png"
-import firebase from 'firebase/app'
-import { app } from '../firebase.js';
-import SearchField from "react-search-field";
 
 import {
     ProSidebar,
     Menu,
     MenuItem,
-    SubMenu,
     SidebarHeader,
     SidebarFooter,
     SidebarContent
   } from "react-pro-sidebar";
 
 // can choose whatever we want
-import { FaList, FaRegHeart, FaUserFriends } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-import { RiPencilLine } from "react-icons/ri";
-import { BiCog } from "react-icons/bi";
 
 /*
 const choices = [

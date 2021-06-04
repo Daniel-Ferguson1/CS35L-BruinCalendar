@@ -53,7 +53,7 @@ export const EventList = ({
         {events.length > 0
           ? events.map((event) =>
           {
-            return <li><Button className="name" onClick={() => onEventSelected(event)}>{event.eventName}</Button>
+            return <li><Button className="eventItem" onClick={() => onEventSelected(event)}>{event.eventName}</Button>
             <p class="time">{convertTime(event.time, 'hh:mm A')}</p>
             </li>
           })

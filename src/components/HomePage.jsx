@@ -40,7 +40,7 @@ export const HomePage = () => {
             <Search />
           </main>
         <div className='addEventButton'>
-	  			<Link to="/addEvent" className="eventlink"><button className="profileWatch">Add Event</button></Link>
+	  			<Link to="/addEvent"><button className="profileWatch">Add Event</button></Link>
 	  		</div>
           <div className='eventlist'>
             <EventList dateClicked={entryDate} dateFormatted={formattedDate} />

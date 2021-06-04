@@ -55,8 +55,9 @@ const Search = () => {
       <div> 
         <ul className="searchlist">
           {events.map(event => (
-            <li>{event.eventName} : {event.description}
-              <Button onClick={() => onEventSelected(event)}>Details</Button>
+            <li className="listofsearches">
+              <Button className="eventItem" onClick={() => onEventSelected(event)}>{event.eventName}</Button> <br></br>
+              {event.description}
             </li>	  		    ))}	  		
         </ul>
       </div>

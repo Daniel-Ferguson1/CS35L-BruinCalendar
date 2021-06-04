@@ -20,10 +20,7 @@ const Event = () => {
   
   return (
     <div className="Event">
-      <Table striped bordered hover>
-        {/* <thread>
-          Event list
-        </thread> */}
+      <Table striped bordered hover> {}
         <tbody>
           { testData.map(renderData) }
         </tbody>

@@ -3,8 +3,15 @@
 }
 
 .cancel {
-  margin-top: 20px;
+  margin: 20px 0;
   font-family: "Crimson Text", serif;
   font-size: 20px;
   font-weight: bold;
+}
+
+.wholeWindow {
+  border: solid;
+  border-color: #0a5091;
+  border-radius: 3px;
+  border-width: thick;
 }

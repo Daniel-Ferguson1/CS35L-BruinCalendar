@@ -42,7 +42,7 @@ export default function Login() {
 				</Form.Group>
 					<Button className="loginButton" disabled={loading} type="submit">Log In</Button>
 				</Form>
-				Need an account? <Link to="/signup">Sign Up </Link>
+				Need an account? <Link to="/signup"><Button className="loginButton">Sign Up</Button></Link>
 			</div>
 		</div>
 

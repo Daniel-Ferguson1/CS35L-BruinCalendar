@@ -11,32 +11,16 @@ import './Dashboard.css'
 
 function Dashboard() {
 	const [error, setError] = useState('') 
-	const [events, setEvents] = useState([]) 
-	const { currentUser, logout } = useAuth()
-	const history = useHistory()
-
-	async function handleLogout(){
-		console.log('heyyh')
-		setError("");
-		try{
-			await logout();
-			//console.log('hey')
-			history.push("/login")
-		}
-		catch{
-			//console.log(err)
-			setError("Failed to log out");
-		}
-	}
+	const [users, setUsers] = useState([]) 
+	const { currentUser } = useAuth()
 
 	useEffect(() => {
-		const fetchEvents = async () => {
+		const fetchUsers = async () => {
 			const db = firebase.firestore()
-			const data = await db.collection("events").where('description', 'array-contains-any',
-			['this', 'Bar']).get() //instead of ['this', 'Bar'], 
-			setEvents(data.docs.map(doc => doc.data()))
+			const data = await db.collection("users").where('email', '==', currentUser.email).get() 
+			setUsers(data.docs.map(doc => doc.data()))
 		}
-		fetchEvents()
+		fetchUsers()
 	}, [])
     return (
 		<>
@@ -46,12 +30,15 @@ function Dashboard() {
 		</div>
 		<div className="Header">
 	  		<h1>Profile</h1>
-	  		{error && <Alert variant="danger">{error}</Alert>}
-	  		<p><strong>Username: </strong> {currentUser.userName}</p>
-			<p><strong>School: </strong> {currentUser.school}</p>
-			<p><strong>Email: </strong> {currentUser.email}</p>
-	  		<p></p>
-			  <div>
+	  		{error && <Alert variant="danger">{error}</Alert>} 
+			{users.map(user => (
+					<>
+				<p><strong>Username: </strong> {user.userName}</p>
+				<p><strong>School: </strong> {user.school}</p>
+					</>
+	  				))}
+	  		<p><strong>Email: </strong> {currentUser.email}</p>
+	  		<div>
 	  			<Link to="/addEvent"><button className="profileWatch">Add Event</button></Link>
 	  		</div>
 		</div>
