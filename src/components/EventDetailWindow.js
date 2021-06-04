@@ -40,7 +40,7 @@ const RightData = styled(DetailCell)``;
 var convertTime = require('convert-time');  
 
 export const EventDetailWindow = ({ item:event, date:date, close = () => {} }) => {
-  const { time, description, eventName, jointEvent, guest, eventId } = event || {};
+  const { time, description, eventName, jointEvent, guest, eventId, userId } = event || {};
 
   return (
     <Form>
@@ -50,6 +50,10 @@ export const EventDetailWindow = ({ item:event, date:date, close = () => {} }) =
           <tr>
             <LeftData>Event Name: </LeftData>
             <RightData>{ eventName }</RightData>
+          </tr>
+          <tr>
+            <LeftData>Event Creator: </LeftData>
+            <RightData>{ userId }</RightData>
           </tr>
           <tr>
             <LeftData>Time: </LeftData>

@@ -31,8 +31,9 @@ export default function AddFriendEvent() {
 			let name = nameRef.current.value
 			let desc = descriptionRef.current.value
 			let nameArray = name.split(' ')
-			console.log(nameArray)
+			nameArray = nameArray.filter((item) => item != '');
 			let descArray = desc.split(' ')
+			descArray = descArray.filter((item) => item != '');
 			let searchArray = nameArray.concat(descArray)
             
 			const data = {
@@ -71,7 +72,6 @@ export default function AddFriendEvent() {
 			<Header />
 		</div>
 		<div className="addEvent">
-<<<<<<< HEAD
 		 <h2>Book Time with {friendId}</h2>
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleSubmit}>
@@ -96,28 +96,6 @@ export default function AddFriendEvent() {
 		  	</Form.Group>
 
 		  	<Button className="eventButton" disabled={loading} type="submit">Add Event</Button>
-=======
-			<h2>Book Time with {friendId}</h2>
-			{error && <Alert variant="danger">{error}</Alert>}
-			<Form onSubmit={handleSubmit}>
-			<Form.Group id="date">
-				<Form.Label>Date: </Form.Label>
-				<Form.Control type="date" ref={dateRef} required />
-			</Form.Group>
-			<Form.Group id="time">
-				<Form.Label>Time: </Form.Label>
-				<Form.Control type="time" ref={timeRef} required />
-			</Form.Group>
-			<Form.Group id="name">
-				<Form.Label>Event Name: </Form.Label>
-				<Form.Control ref={nameRef} required />
-			</Form.Group>
-			<Form.Group id="description">
-				<Form.Label>Event Description: </Form.Label>
-				<Form.Control ref={descriptionRef} />
-			</Form.Group>
-			<Button className="friendButton" disabled={loading} type="submit">Add Event</Button>
->>>>>>> 4309e924a2dc431abf737874ed198e450e6a38f5
 		</Form>
 		</div> 
 		<div className="addEvent">

@@ -8,6 +8,8 @@ import 'firebase/firestore';
 export default function Signup() {
 	const emailRef = useRef();
 	const passwordRef = useRef();
+	const userRef = useRef();
+	const schoolRef = useRef();
 	const passwordConfirmRef = useRef();
 	const {signup} = useAuth()
 	const [error, setError] = useState('')
@@ -22,8 +24,8 @@ export default function Signup() {
 		}
 		const data = {
 			email: emailRef.current.value,
-			userName: '',
-			school: '',
+			userName: userRef.current.value,
+			school: schoolRef.current.value,
 			friends: []
 		  };
 		await db.collection('users').doc(emailRef.current.value).set(data);
@@ -31,13 +33,6 @@ export default function Signup() {
 			setError("");
 			setLoading(true);
 			await signup(emailRef.current.value, passwordRef.current.value)
-			//.then((userCredential) => {
-				// Signed in 
-				//var user = userCredential.user;
-				//console.log(user.uid)
-				// ...
-			 // })
-			//await db.collection('users').doc().set(data);
 			history.push("/")
 		}
 		catch(err){
@@ -54,6 +49,14 @@ export default function Signup() {
 		 <h2>Sign Up</h2>
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleSubmit}>
+		 <Form.Group>
+		  		<Form.Label>Username</Form.Label>
+		  		<Form.Control ref={userRef} required />
+		  </Form.Group>
+		  <Form.Group>
+		  		<Form.Label>School</Form.Label>
+		  		<Form.Control ref={schoolRef} />
+		  </Form.Group>
 		  <Form.Group id="email">
 		  	<Form.Label>Email</Form.Label>
 		  	<Form.Control type="email" ref={emailRef} required />

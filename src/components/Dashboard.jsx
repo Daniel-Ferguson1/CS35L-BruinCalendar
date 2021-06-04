@@ -41,13 +41,22 @@ function Dashboard() {
     return (
 		<>
 		<div>
-			<Header />
-			<Sidebar />
-			<div>
+          <Sidebar />
+          <Header />
+		</div>
+		<div className="Header">
+	  		<h1>Profile</h1>
+	  		{error && <Alert variant="danger">{error}</Alert>}
+	  		<p><strong>Username: </strong> {currentUser.userName}</p>
+			<p><strong>School: </strong> {currentUser.school}</p>
+			<p><strong>Email: </strong> {currentUser.email}</p>
+	  		<p></p>
+			  <div>
 	  			<Link to="/addEvent"><button className="profileWatch">Add Event</button></Link>
 	  		</div>
 		</div>
 	  	</>
+
   	);
 }
 export default Dashboard;

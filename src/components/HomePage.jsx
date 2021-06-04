@@ -6,7 +6,6 @@ import Sidebar from '../feature/Sidebar';
 import Header from './Header';
 import "../index.css";
 import 'react-bootstrap';
-import { Link } from 'react-router-dom'
 import ReactCalendar from "react-calendar"; 
 import './Calendar.css';
 import './HomePage.css';
@@ -44,7 +43,6 @@ export const HomePage = () => {
 	  			<Link to="/addEvent" className="eventlink"><button className="profileWatch">Add Event</button></Link>
 	  		</div>
           <div className='eventlist'>
-            <Link to="/addEvent">Add Event</Link>
             <EventList dateClicked={entryDate} dateFormatted={formattedDate} />
           </div>
       </div>

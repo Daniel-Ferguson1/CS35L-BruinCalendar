@@ -14,7 +14,6 @@ export default function AddEvent() {
 	const timeRef = useRef();
 	const nameRef = useRef();
 	const descriptionRef = useRef();
-	const commentRef = useRef();
 	const {currentUser} = useAuth()
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
@@ -30,9 +29,10 @@ export default function AddEvent() {
 			let time = timeRef.current.value
 			let name = nameRef.current.value
 			let desc = descriptionRef.current.value
-			let comment = commentRef.current.value
 			let nameArray = name.split(' ')
+			nameArray = nameArray.filter((item) => item != '');
 			let descArray = desc.split(' ')
+			descArray = descArray.filter((item) => item != '');
 			let searchArray = nameArray.concat(descArray)
             
 			const data = {
@@ -41,7 +41,6 @@ export default function AddEvent() {
 				userId: currentUser.email,
 				eventName: name,
 				description: desc,
-				commentList: comment,
 				searchValues: searchArray,
 				jointEvent: false,
 				guest: '',
@@ -73,7 +72,6 @@ export default function AddEvent() {
 		</div>
 
 		<div className="addEvent">
-<<<<<<< HEAD
 		 <h2>Create Event</h2>
 		 {error && <Alert variant="danger">{error}</Alert>}
 		 <Form onSubmit={handleSubmit}>
@@ -97,11 +95,6 @@ export default function AddEvent() {
 		  		<Form.Control class="addEventInput" ref={descriptionRef} />
 		  	</Form.Group>
 
-			  <Form.Group className="eventForm">
-		  		<Form.Label>Comments: </Form.Label>
-		  		<Form.Control class="addEventInput" ref={commentRef} required />
-		  </Form.Group>
-
 		  	<Button className="eventButton" disabled={loading} type="submit">Add Event</Button>
 		</Form>
 		<div className="Cancellation">
@@ -111,42 +104,5 @@ export default function AddEvent() {
 	  
 	  </>
 
-=======
-			<h2>Create Event</h2>
-			{error && <Alert variant="danger">{error}</Alert>}
-			<Form onSubmit={handleSubmit}>
-				<Form.Group id="date">
-					<Form.Label>Date: </Form.Label>
-					<Form.Control class="addEventInput" type="date" ref={dateRef} required />
-				</Form.Group>
-		
-				<Form.Group id="time">
-					<Form.Label>Time: </Form.Label>
-					<Form.Control class="addEventInput" type="time" ref={timeRef} required />
-				</Form.Group>
-		
-				<Form.Group id="name">
-					<Form.Label>Event Name: </Form.Label>
-					<Form.Control class="addEventInput" ref={nameRef} required />
-				</Form.Group>
-		
-				<Form.Group id="description">
-					<Form.Label>Event Description: </Form.Label>
-					<Form.Control class="addEventInput" ref={descriptionRef} />
-				</Form.Group>
-		
-				<Form.Group id="comment">
-					<Form.Label>Comments: </Form.Label>
-					<Form.Control class="addEventInput" ref={commentRef} required />
-				</Form.Group>
-		
-				<Button className="eventButton" disabled={loading} type="submit">Add Event</Button>
-			</Form>
-			<div className="Cancellation">
-				No longer need to schedule an event? <Link to="/">Cancel</Link>
-			</div>
-	</div> 
-	</>
->>>>>>> 4309e924a2dc431abf737874ed198e450e6a38f5
 	);
 }

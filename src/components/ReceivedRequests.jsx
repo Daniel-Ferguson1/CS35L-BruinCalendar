@@ -1,17 +1,13 @@
-import React, {useRef, useState, useEffect} from 'react';
-import { Form, Button, Alert} from 'react-bootstrap';
+import React, { useState, useEffect} from 'react';
+import { Button } from 'react-bootstrap';
 import {useAuth} from '../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/firestore';
 
 function FriendList() {
-	const [error, setError] = useState('') 
     const [listType, setListType] = useState('All')
-    const [active, setActive] = useState(false)
 	const [users, setUsers] = useState([]) 
-	const { currentUser, logout } = useAuth()
-	const history = useHistory()
 
     async function addFriend(){
         //condition checking to change state from true to false and vice versa
