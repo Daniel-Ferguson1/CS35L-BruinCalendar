@@ -38,12 +38,12 @@ export const AddComment = ({ eventId:eventId, onSubmitComment }) => {
 
 	return ( 
 	  <div>
-		 {error && <Alert variant="danger">{error}</Alert>}
-		 <Form onSubmit={handleComments}>
-		    <Form.Group id="comment">
-		  		<Form.Label>Add Comment: </Form.Label> <br></br>
-		  		<Form.Control ref={commentRef} />
-		  	</Form.Group>
+			{error && <Alert variant="danger">{error}</Alert>}
+			<Form onSubmit={handleComments}>
+				<Form.Group id="comment">
+					<Form.Label>Add Comment: </Form.Label> <br></br>
+					<Form.Control ref={commentRef} />
+				</Form.Group>
 				<Button disabled={loading} type="submit" id="button" >Submit</Button>
 			</Form>
 	  </div> 
