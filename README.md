@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 
-## Database instructions 
+## Firebase Database Instructions 
 1) Setup your firebase account 
 2) Navigate into the 'src/firebase.js' file
 3) Populate the 'firebaseConfig' variable with your personal firebase keys.
