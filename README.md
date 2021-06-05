@@ -7,7 +7,13 @@ The Bruin Calendar was created to help users keep track of their schedule while 
 ## Usage 
 
 1) Use HTTPS or SSH to clone the repo
-2) CD into the directory ~~~
+```
+git clone https://github.com/Daniel-Ferguson1/CS35L-BruinCalendar.git
+```
+2) CD into the directory
+```
+cd ./CS35L-BruinCalendar
+```
 3) Run 
 ```
 npm install
