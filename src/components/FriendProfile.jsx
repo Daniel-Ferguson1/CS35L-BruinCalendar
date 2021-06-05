@@ -1,21 +1,23 @@
 import React, {useRef, useState, useEffect} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
-import {useAuth} from '../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
-import Users from "./Users"
-import firebase from 'firebase/app'
+import {useAuth} from '../contexts/AuthContext';
+import {Link, useHistory} from 'react-router-dom';
+import Users from "./Users";
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 import EventDetailWindow from './EventDetailWindow';
 import { Modal } from  './Modal';
 import Sidebar from '../feature/Sidebar';
-import './FriendList.css'
-import Header from './Header'
-import './FriendProfile.css'
+import './FriendList.css';
+import Header from './Header';
+import './FriendProfile.css';
 
 class FriendProfile extends React.Component {
+
     constructor() {
       super()
       const events = [];
+      
       this.state = {
         eventsPersonal: [],
         eventsJoint: [],
@@ -25,6 +27,10 @@ class FriendProfile extends React.Component {
         dateFormatted: '',
       }
     }
+
+    goBack() { 
+      this.props.history.push("/FriendList"); 
+    } 
 
     onEventSelected = event => {
       this.setState({
@@ -76,9 +82,16 @@ class FriendProfile extends React.Component {
   
   render(){
         const { stateData } = this.props.location
-        let uid = stateData.user
-        let currentUser = stateData.currentUser
-        //console.log(currentUser)
+        let uid = 0;
+        let currentUser = 0;
+        if (!!!stateData){
+          this.props.history.push("/FriendList"); 
+        }
+        else{
+          uid = stateData.user
+          currentUser = stateData.currentUser
+        }
+
         this.getEvents(uid, currentUser);
         let returnView1;
         let returnView2;
@@ -91,7 +104,7 @@ class FriendProfile extends React.Component {
             {
               
               //console.log(event.uid)
-              return <li>
+              return <li key={event.eventId}> 
                 <Button className="friendItem" onClick={() => this.onEventSelected(event)}>{event.eventName}</Button>
               </li>
             })
@@ -103,7 +116,7 @@ class FriendProfile extends React.Component {
         else{
           returnView2 = this.state.eventsJoint.map((event) =>
             {
-              return <li>
+              return <li key={event.eventId}>
                 <Button className="friendItem" onClick={() => this.onEventSelected(event)}>{event.eventName}</Button>
                 </li>
             })

@@ -1,13 +1,13 @@
 import React, {useRef, useState, useEffect} from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
-import {useAuth} from '../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
+import {useAuth} from '../contexts/AuthContext';
+import {Link, useHistory} from 'react-router-dom';
 import Users from "./Users"
-import firebase from 'firebase/app'
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 import Sidebar from '../feature/Sidebar';
 import Header from './Header';
-import './FriendList.css'
+import './FriendList.css';
 
 function FriendList() {
 	const [error, setError] = useState('') 
@@ -49,7 +49,7 @@ function FriendList() {
 	let listLine; 
 	if (listType == 'Friends') {
 		listLine = friends.map(user => {
-			return <li>{user}:&nbsp; 
+			return <li  key={user.email}>{user}:&nbsp; 
 			<Link to={{
 				pathname: "/friendProfile",
 				stateData: {user,currentUser} // your data array of objects
@@ -66,7 +66,7 @@ function FriendList() {
 			if(friends.includes(user.email)){
 				return
 			}
-			return <li>{user.email} <Button className="profileWatch" onClick={e => addFriend(e,user)}>Add Friend</Button> </li>
+			return <li key={user.email}>{user.email} <Button className="profileWatch" onClick={e => addFriend(e,user)}>Add Friend</Button> </li>
 		})
 	}
 

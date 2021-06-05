@@ -14,13 +14,13 @@ export default function AddEvent() {
 	const timeRef = useRef();
 	const nameRef = useRef();
 	const descriptionRef = useRef();
-	const {currentUser} = useAuth()
-	const [error, setError] = useState('')
-	const [loading, setLoading] = useState(false)
-	const history = useHistory()
+	const {currentUser} = useAuth();
+	const [error, setError] = useState('');
+	const [loading, setLoading] = useState(false);
+	const history = useHistory();
 
 	async function handleSubmit(e) {
-		e.preventDefault()
+		e.preventDefault();
 		try{
 			setError("");
 			setLoading(true);

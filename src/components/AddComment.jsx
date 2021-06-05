@@ -5,7 +5,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore';
 import './AddComment.css'
 
-export const AddComment = ({ eventId:eventId, onSubmitComment }) => {
+export const AddComment = ({ eventId, onSubmitComment }) => {
 	const commentRef = useRef();
 	const [error, setError] = useState('')
 	const {currentUser} = useAuth()
@@ -24,7 +24,7 @@ export const AddComment = ({ eventId:eventId, onSubmitComment }) => {
 				email: currentUser.email,
 				eventId: eventId,
 			};
-			const res = await db.collection('comments').doc().set(data);
+			await db.collection('comments').doc().set(data);
 		}
 		catch(err){
 			console.log(err)

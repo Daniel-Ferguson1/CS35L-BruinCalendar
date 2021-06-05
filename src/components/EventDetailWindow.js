@@ -41,6 +41,7 @@ var convertTime = require('convert-time');
 
 export const EventDetailWindow = ({ item:event, date:date, close = () => {} }) => {
   const { time, description, eventName, jointEvent, guest, eventId, userId } = event || {};
+  //console.log(event);
 
   return (
     <div className="wholeWindow">
