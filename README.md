@@ -15,7 +15,7 @@ cd ./CS35L-BruinCalendar
 ```
 3) Install node_modules
 ```
-npm install
+npm install --legacy-peer-deps
 ```
 4) Set up your database (See details below)
 
