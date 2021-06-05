@@ -5,7 +5,7 @@
 The Bruin Calendar was created to help users keep track of their schedule while also interacting with others. You can create events, view events on your calendar and search for events with the search bar. You can also add friends, create joint events and comment on other events.
 
 ## Usage 
-
+1) Use HTTPS or SSH to clone the repo
 ```
 git clone https://github.com/Daniel-Ferguson1/CS35L-BruinCalendar.git
 ```
