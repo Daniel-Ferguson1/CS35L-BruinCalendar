@@ -1,5 +1,9 @@
 # Getting Started with the Following Procedures
-### `git clone `
+### `git clone https://github.com/Daniel-Ferguson1/CS35L-BruinCalendar.git`
+### `cd ./CS35L-BruinCalendar`
+### `npm install`
+Now you can run the app
+### `npm start`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
