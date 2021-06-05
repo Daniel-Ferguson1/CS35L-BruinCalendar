@@ -14,13 +14,13 @@ git clone https://github.com/Daniel-Ferguson1/CS35L-BruinCalendar.git
 ```
 cd ./CS35L-BruinCalendar
 ```
-3) Run 
+3) Install node_modules
 ```
 npm install
 ```
-4)Set up your database (See details below)
+4) Set up your database (See details below)
 
-5)Run 
+5) Run 
 ```
 npm start
 ```
