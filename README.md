@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Getting Started with the Following Procedures
+### `git clone `
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,9 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-
------
-npm install --legacy-peer-deps
 ---
 
 ### `npm start`
