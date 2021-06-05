@@ -7,20 +7,19 @@ The Bruin Calendar was created to help users keep track of their schedule while 
 ## Usage 
 
 1) Use HTTPS or SSH to clone the repo
-```
-git clone https://github.com/Daniel-Ferguson1/CS35L-BruinCalendar.git
-```
-2) CD into the directory
-```
-cd ./CS35L-BruinCalendar
-```
-3) Install node_modules
+2) CD into the directory 'CS35L-BruinCalendar'
+3) Run 
 ```
 npm install
 ```
-4) Set up your database (See details below)
+4)Set up your database (See details below)
 
-5) Run 
+5)Run 
 ```
 npm start
 ```
+
+## Database instructions 
+1) Setup your firebase account 
+2) Navigate into the 'src/firebase.js' file
+3) Populate the 'firebaseConfig' variable with your personal firebase keys.
