@@ -1,0 +1,68 @@
+── src
+    ├── app
+    │   ├── App.css
+    │   ├── App.js
+    │   ├── index.js
+    │   └── serviceWorker.js
+    ├── auth
+    │   ├── CreateAccountPage.js
+    │   ├── EmailConfirmationLanderPage.js
+    │   ├── ProtectedRoute.js
+    │   ├── ResetPasswordForm.js
+    │   ├── SignInForm.js
+    │   ├── SignInPage.js
+    │   ├── SignOutButton.js
+    │   └── index.js
+    ├── fakeData.js
+    ├── index.css
+    ├── index.js
+    ├── reservations
+    │   ├── MakeAReservationForm.js
+    │   ├── ReservationDetailForm.js
+    │   ├── ReservationsListItem.js
+    │   ├── ReservationsListPage.js
+    │   └── index.js
+    ├── restaurants // restaurant example
+    │   ├── RestaurantDetailPage.js
+    │   ├── RestaurantListItem.js
+    │   ├── SearchPage.js
+    │   └── index.js
+    ├── reviews // extra features
+    │   ├── ReviewListItem.js
+    │   ├── WriteAReviewPage.js
+    │   ├── WriteAReviewThankYouPage.js
+    │   └── index.js
+    ├── test
+    │   └── testData.js
+    ├── ui // front
+    │   ├── Button.js
+    │   ├── CenteredContentBox.js
+    │   ├── DatePicker.js
+    │   ├── Divider.js
+    │   ├── ErrorMessage.js
+    │   ├── Heading.js
+    │   ├── HeadingSmall.js
+    │   ├── HoveringButton.js
+    │   ├── LanderPage.js
+    │   ├── Link.js
+    │   ├── MaxWidthContentSection.js
+    │   ├── Modal.js
+    │   ├── Rating.js
+    │   ├── SelectionList.js
+    │   ├── Tag.js
+    │   ├── TextArea.js
+    │   ├── TextInput.js
+    │   ├── Thumbnail.js
+    │   ├── UploadMultipleFilesButton.js
+    │   ├── UploadSingleFileButton.js
+    │   └── index.js
+    ├── user // ?? i don't know
+    │   ├── EditProfilePage.js
+    │   └── index.js
+    └── util // little features for front
+        ├── index.js
+        ├── mapAsync.js
+        └── readFile.js
+
+10 directories, 56 files
+No share source code. Not sure if I am allowed.
